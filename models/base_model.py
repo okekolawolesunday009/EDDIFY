@@ -11,6 +11,7 @@ from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
 
+
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
 
@@ -58,6 +59,8 @@ class BaseModel:
     def save(self):
         """Updates the attribute 'update_at' with the current datetime"""
         self.updated_at = datetime.utcnow()
-        
+        models.storage.new(self)
+        models.storage.save()
+
 
 
