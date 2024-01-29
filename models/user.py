@@ -14,6 +14,4 @@ class User(BaseModel):
 	confirmed = ""
 	phoneNo= ""
 	country = ""
-	courses = ""
 	confirmed = False
-	
