@@ -39,3 +39,30 @@ class User(BaseModel, Base):
         phone_number = ""
         country = ""
         confirmed = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes User"""
+        super().__init__(*args, **kwargs)
+
+    if models.storage_t != 'db':
+        @property
+        def reviews(self):
+            """getter attribute returns the list of Review instances"""
+            from models.review import Review
+            review_list = []
+            all_reviews = models.storage.all(Review)
+            for review in all_reviews.values():
+                if review.user_id == self.id:
+                    review_list.append(review)
+            return review_list
+
+        @property
+        def users(self):
+            """getter attribute returns the list of user instances"""
+            from models.course import Course
+            course_list = []
+            all_courses =  models.storage.all(Course)
+            for course in all_courses.values():
+                if course.user_id == self.id:
+                    course_list.append(course)
+            return course_list
