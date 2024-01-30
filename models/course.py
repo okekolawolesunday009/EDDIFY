@@ -1,4 +1,3 @@
-
 # such as course ID, title, description, instructor ID (foreign key referencing Users table), etc.
 #!/usr/bin/python
 """ holds class Place"""
