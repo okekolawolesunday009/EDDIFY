@@ -14,12 +14,13 @@ class Lesson(BaseModel, Base):
     """Representation of state """
     if models.storage_t == "db":
         __tablename__ = 'lessons'
-        title = Column(String(128), nullable=False)
-        # quiz = relationship("City",
-        #                       backref="state",
-        #                       cascade="all, delete, delete-orphan")
+        lesson_title = Column(String(128), nullable=False)
+        content =  Column(String(250), nullable=False)
+        course_id = Column(String(60), ForeignKey('course.id'))
+
     else:
-        title = ""
+        lesson_title = ""
+        content = ""
 
     def __init__(self, *args, **kwargs):
         """initializes Lesson"""
