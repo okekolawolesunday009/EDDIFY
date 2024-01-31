@@ -7,6 +7,12 @@ import models
 from models.base_model import BaseModel
 from models.course import Course
 from models.user import User
+from models.review import Review
+from models.lesson import Lesson
+from models.enrollment import Enrollment
+from models.quiz import Quiz
+
+
 import shlex  # for splitting the line along spaces except in double quotes
 
 classes = {"BaseModel": BaseModel, 'User': User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review}
