@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """class user model"""
-from base_model import BaseModel
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
@@ -10,7 +9,7 @@ from sqlalchemy.orm import relationship
 from hashlib import md5
 
 
-class User:
+class User(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'users'
         email = Column(String(128), nullable=False)
