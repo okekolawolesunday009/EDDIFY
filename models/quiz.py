@@ -8,7 +8,7 @@ from sqlalchemy import Column, String, ForeignKey
 
 
 class Quiz(BaseModel, Base):
-    """Representation of Review """
+    """Representation of Quiz """
     if models.storage_t == 'db':
         __tablename__ = 'quizs'
         title = Column(String(60), ForeignKey('places.id'), nullable=False)
