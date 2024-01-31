@@ -5,18 +5,9 @@ import cmd
 from datetime import datetime
 import models
 from models.base_model import BaseModel
-from models.course import Course
-from models.enrollment import Enrollment
-from models.lesson import Lesson
-from models.quiz import Quiz
-from models.category import Category
-from models.user import User
-from sqlalchemy.ext.declarative import declarative_base
-
-
 import shlex  # for splitting the line along spaces except in double quotes
-classes = {"BaseModel": BaseModel, "Course": Course, "Enrollment": Enrollment, 
-           "Lesson": Lesson, "Quiz": Quiz, "Category": Category, "User": User}
+
+classes = {"BaseModel": BaseModel}
 
 class EDDIFYCommand(cmd.Cmd):
     """ Eddify console """

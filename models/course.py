@@ -25,9 +25,13 @@ class Course(BaseModel, Base):
     """Representation of Place """
     if models.storage_t == 'db':
         __tablename__ = 'courses'
-        category_id = Column(String(60), ForeignKey('categorys.id'), nullable=False)
+        lesson_id = Column(String(60), ForeignKey('lessons.id'), nullable=False)
+        user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         title = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=True)
+        number_lesson = Column(Integer, nullable=False, default=0)
+        hours_lesson = Column(Integer, nullable=False, default=0)
+        number_quiz = Column(Integer, nullable=False, default=0)
         
         # reviews = relationship("Review",
         #                        backref="place",
@@ -36,9 +40,13 @@ class Course(BaseModel, Base):
         #                          secondary=place_amenity,
         #                          viewonly=False)
     else:
-        category_id = ""
+        lesson_id = ""
+        user_id = ""
         title = ""
         description = ""
+        number_lesson = 0
+        hours_lesson = 0
+        number_quiz = 0
         
         # amenity_ids = []
 
