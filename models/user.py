@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """class user model"""
-from base_model import BaseModel
-import models
 from models.base_model import BaseModel, Base
+import models
 from os import getenv
 from sqlalchemy import Table, ForeignKey
 from sqlalchemy import Column, String, Integer, Boolean
