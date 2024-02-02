@@ -14,6 +14,8 @@ class Quiz(BaseModel, Base):
         quiz_title = Column(String(128), nullable=False)
         content = Column(String(250), nullable=False)
         lesson_id = Column(String(60), ForeignKey('lessons.id'), nullable=False)
+
+        __table_args__ = {'extend_existing': True}
        
     else:
         title = ""
