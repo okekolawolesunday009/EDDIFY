@@ -17,6 +17,7 @@ class Lesson(BaseModel, Base):
         lesson_title = Column(String(128), nullable=False)
         content =  Column(String(250), nullable=False)
         course_id = Column(String(60), ForeignKey('courses.id'))
+        
 
     else:
         lesson_title = ""

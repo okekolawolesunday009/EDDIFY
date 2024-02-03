@@ -11,10 +11,10 @@ from models.user import User
 from models.review import Review
 from models.lesson import Lesson
 from models.enrollment import Enrollment
-from models.quiz import Quiz
+
 from hashlib import md5
 
-classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review}
+classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Enrollment": Enrollment, "Review": Review}
 
 
 class FileStorage:
