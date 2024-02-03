@@ -63,13 +63,15 @@ class DBStorage:
     def reload(self):
         """reload data form the  database"""
         Base.metadata.create_all(self.__engine)
+       
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session
+        
 
     def close(self):
         """call remove() method pn the private session attribute"""
-        self.__session.remove()
+        Base.metadata.drop_all(self.__engine)
 
     def get(self, cls, id):
         """
