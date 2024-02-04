@@ -15,7 +15,6 @@ class Course(BaseModel, Base):
     """Representation of Place """
     if models.storage_t == 'db':
         __tablename__ = 'courses'
-        user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         category_id = Column(String(60), ForeignKey('categories.id'), nullable=False)
         title = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=True)

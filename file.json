@@ -122,5 +122,18 @@
     "created_at": "2024-02-02T15:30:00.028272",
     "updated_at": "2024-02-02T15:30:00.028282",
     "__class__": "Course"
+  },
+  "Category.0a7a8da0-6452-4d63-b33c-a4c8148f02f9": {
+    "id": "0a7a8da0-6452-4d63-b33c-a4c8148f02f9",
+    "created_at": "2024-02-04T20:24:40.566661",
+    "updated_at": "2024-02-04T20:24:40.566701",
+    "__class__": "Category"
+  },
+  "Category.b0fbc8e3-1c3f-4c60-8ad2-513690d2358c": {
+    "name": "timi",
+    "created_at": "2024-02-04T20:30:14.219071",
+    "updated_at": "2024-02-04T20:30:14.219187",
+    "id": "b0fbc8e3-1c3f-4c60-8ad2-513690d2358c",
+    "__class__": "Category"
   }
 }
