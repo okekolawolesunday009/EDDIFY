@@ -16,12 +16,15 @@ class Course(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'courses'
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
+        category_id = Column(String(60), ForeignKey('categories.id'), nullable=False)
         title = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=True)
         number_lesson = Column(Integer, nullable=False, default=0)
         hours_lesson = Column(Integer, nullable=False, default=0)
         number_quiz = Column(Integer, nullable=False, default=0)
         lessons = relationship("Lesson", backref="course", viewonly=False)
+        enrollments = relationship("Enrollment", back_populates="course", cascade="all, delete, delete-orphan")
+
         
 
     else:

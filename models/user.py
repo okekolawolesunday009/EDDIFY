@@ -26,6 +26,7 @@ class User(BaseModel, Base):
         country = Column(String(50), nullable=False)
         confirmed = Column(Boolean, default=False)
         review = relationship("Review", backref="user", viewonly=False)
+        enrollments = relationship('Enrollment', back_populates='user')
         enrolled_courses = relationship('Course', secondary=user_course_association, viewonly=False)
         # enrolled_courses = relationship('Course', secondary=user_course_association, back_populates='enrolled_user', viewonly=False)
     else:
