@@ -13,8 +13,8 @@ from sqlalchemy.orm import relationship
 class Category(BaseModel, Base):
     """Representation of category """
     if models.storage_t == "db":
-        __tablename__ = 'lessons'
-        category_name = Column(String(128), nullable=False)
+        __tablename__ = 'categories'
+        category_name = Column(String(128), nullable=True)
         course = relationship("Course",
                                backref="category",
                                cascade="all, delete, delete-orphan")

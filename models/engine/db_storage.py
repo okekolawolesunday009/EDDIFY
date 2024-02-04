@@ -10,10 +10,11 @@ from models.user import User
 from models.review import Review
 from models.lesson import Lesson
 from models.enrollment import Enrollment
+from models.category import Category
 from models.quiz import Quiz
 import sqlalchemy
 
-classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review}
+classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review, "Category": Category}
 
 class DBStorage:
     """Interact with MySQL database"""
@@ -41,7 +42,7 @@ class DBStorage:
             new_dict = {}
             for clss in classes:
                 if cls is None or cls is classes[clss] or cls is clss:
-                    objs  = self.__session.query(clss)
+                    objs  = self.__session.query(classes[clss])
                     for  obj in objs:
                         key = obj.__class__name__ + '.' + obj.id
                         new_dict[key] =obj

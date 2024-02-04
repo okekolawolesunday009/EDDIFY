@@ -6,12 +6,11 @@ from os import getenv
 import sqlalchemy
 from sqlalchemy import Column, String, ForeignKey
 
-Base.metadata.clear()
 
 class Quiz(BaseModel, Base):
     """Representation of Quiz """
     if models.storage_t == 'db':
-        __tablename__ = 'quiz'
+        __tablename__ = 'quizs'
         quiz_title = Column(String(128), nullable=False)
         content = Column(String(250), nullable=False)
         lesson_id = Column(String(60), ForeignKey('lessons.id'), nullable=False)
