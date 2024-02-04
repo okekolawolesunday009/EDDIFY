@@ -11,8 +11,8 @@ from hashlib import md5
 if models.storage_t == 'db':
     """many to many  relationship it connect user to course and course to user"""
     user_course_association = Table('user_course_association',
-                            Base.metadata, Column('UserID', Integer, ForeignKey('users.id')),
-                  		    Column('CourseID', Integer, ForeignKey('courses.id')))
+                            Base.metadata, Column('UserID', String(60), ForeignKey('users.id')),
+                  		    Column('CourseID', String(60), ForeignKey('courses.id')))
 
 class User(BaseModel, Base):
     if models.storage_t == 'db':
@@ -26,7 +26,8 @@ class User(BaseModel, Base):
         country = Column(String(50), nullable=False)
         confirmed = Column(Boolean, default=False)
         review = relationship("Review", backref="user", viewonly=False)
-        enrolled_courses = relationship('Course', secondary=user_course_association, back_populates='enrolled_user', viewonly=False)
+        enrolled_courses = relationship('Course', secondary=user_course_association, viewonly=False)
+        # enrolled_courses = relationship('Course', secondary=user_course_association, back_populates='enrolled_user', viewonly=False)
     else:
         email = ""
         password = ""
