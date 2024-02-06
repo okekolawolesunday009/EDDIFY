@@ -7,7 +7,7 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
-@app_views.route('/category/<category_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/category/<category_id>/courses', methods=['GET'], strict_slashes=False)
 def get_courses(category_id):
     """
     Retrieves a list of all cities
@@ -45,6 +45,8 @@ def delete_course(course_id):
     storage.delete(course)
     storage.save()
 
+    return make_response(jsonify({}), 200)
+
 @app_views.route('/category/<category_id>/courses', methods=['POST'], strict_slashes=False)
 def post_course(category_id):
     """
@@ -55,7 +57,7 @@ def post_course(category_id):
         abort(404)
     if not request.get_json():
         abort(400, description="Not a JSON")
-    if 'category_name' not in request.get_json():
+    if 'title' not in request.get_json():
         abort(400, description="Missing name")
 
     data = request.get_json()
