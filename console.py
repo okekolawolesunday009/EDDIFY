@@ -5,9 +5,19 @@ import cmd
 from datetime import datetime
 import models
 from models.base_model import BaseModel
+from models.course import Course
+from models.user import User
+from models.review import Review
+from models.lesson import Lesson
+from models.enrollment import Enrollment
+from models.category import Category
+from models.quiz import Quiz
+import shlex
+
+
 import shlex  # for splitting the line along spaces except in double quotes
 
-classes = {"BaseModel": BaseModel}
+classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review, "Category": Category}
 
 class EDDIFYCommand(cmd.Cmd):
     """ Eddify console """
@@ -36,7 +46,9 @@ class EDDIFYCommand(cmd.Cmd):
                 value = kvp[1]
                 if value[0] == value[-1] == '"':
                     value = shlex.split(value)[0].replace('_', ' ')
+                
                 else:
+
                     try:
                         value = int(value)
                     except (ValueError, TypeError):
@@ -50,6 +62,7 @@ class EDDIFYCommand(cmd.Cmd):
     def do_create(self, arg):
         """Creates  a new instances of a class"""
         args = arg.split()
+        print(args)
         if len(args) == 0:
             print("** class name missing **")
             return False
