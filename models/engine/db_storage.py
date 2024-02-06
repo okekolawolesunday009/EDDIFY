@@ -14,7 +14,7 @@ from models.category import Category
 from models.quiz import Quiz
 import sqlalchemy
 
-classes = {"BaseModel": BaseModel, "User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review, "Category": Category}
+classes = {"User": User, "Lesson": Lesson, "Course": Course, "Quiz": Quiz, "Enrollment": Enrollment, "Review": Review, "Category": Category}
 
 class DBStorage:
     """Interact with MySQL database"""
@@ -41,10 +41,10 @@ class DBStorage:
             """query on the current database session"""
             new_dict = {}
             for clss in classes:
-                if cls is None or cls is classes[clss] or cls is clss:
-                    objs  = self.__session.query(classes[clss])
+                if cls is None or cls is classes[clss] or cls == clss:
+                    objs  = self.__session.query(classes[clss]).all()
                     for  obj in objs:
-                        key = obj.__class__name__ + '.' + obj.id
+                        key = obj.__class__.__name__ + '.' + obj.id
                         new_dict[key] =obj
             return (new_dict)
 		
@@ -72,7 +72,7 @@ class DBStorage:
 
     def close(self):
         """call remove() method pn the private session attribute"""
-        Base.metadata.drop_all(self.__engine)
+        self.__session.remove()
 
     def get(self, cls, id):
         """
