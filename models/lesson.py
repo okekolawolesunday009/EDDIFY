@@ -11,14 +11,12 @@ from sqlalchemy.orm import relationship
 
 
 class Lesson(BaseModel, Base):
-    """Representation of state """
+    """Representation of lesson """
     if models.storage_t == "db":
         __tablename__ = 'lessons'
         lesson_title = Column(String(128), nullable=False)
         content =  Column(String(250), nullable=False)
         course_id = Column(String(60), ForeignKey('courses.id'))
-        
-
     else:
         lesson_title = ""
         content = ""

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 """ holds class Quiz"""
 import models
 from models.base_model import BaseModel, Base
