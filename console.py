@@ -39,14 +39,16 @@ class EDDIFYCommand(cmd.Cmd):
     def _key_value_parser(self, args):
         """creates a dictionary from a list of strings"""
         new_dict = {}
-        for arg in args:
+        argu = ' '.join(args)
+        arguments = shlex.split(argu)
+        print(arguments)
+        for arg in arguments:
             if "=" in arg:
                 kvp = arg.split('=', 1)
                 key = kvp[0]
                 value = kvp[1]
-                if value[0] == value[-1] == '"':
-                    value = shlex.split(value)[0].replace('_', ' ')
-                
+                if not value.isdigit():
+                    value = value
                 else:
 
                     try:
@@ -61,8 +63,7 @@ class EDDIFYCommand(cmd.Cmd):
     
     def do_create(self, arg):
         """Creates  a new instances of a class"""
-        args = arg.split()
-        print(args)
+        args = arg.split(" ", 1)
         if len(args) == 0:
             print("** class name missing **")
             return False
