@@ -1,6 +1,6 @@
 # such as course ID, title, description, instructor ID (foreign key referencing Users table), etc.
 #!/usr/bin/python
-""" holds class Place"""
+""" holds class Coursefrom models.base_model import BaseModel,"""
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
@@ -24,7 +24,7 @@ class Course(BaseModel, Base):
         lessons = relationship("Lesson", backref="course", viewonly=False)
         enrollments = relationship("Enrollment", back_populates="course", cascade="all, delete, delete-orphan")
         reviews = relationship("Review",
-                               backref="place",
+                               backref="course",
                                cascade="all, delete, delete-orphan")
 
         

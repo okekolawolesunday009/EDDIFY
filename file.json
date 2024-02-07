@@ -539,5 +539,11 @@
     "updated_at": "2024-02-07T09:45:53.153907",
     "id": "9b1cbfa0-cd1f-4f95-83ed-31b3bda0fcc4",
     "__class__": "Review"
+  },
+  "Course.06406a7f-5b74-4a0c-91ce-dd299682a0db": {
+    "id": "06406a7f-5b74-4a0c-91ce-dd299682a0db",
+    "created_at": "2024-02-07T16:22:27.484516",
+    "updated_at": "2024-02-07T16:22:27.485005",
+    "__class__": "Course"
   }
 }
