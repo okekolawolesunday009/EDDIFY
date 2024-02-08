@@ -80,12 +80,14 @@ def post_user_():
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
 
+
 @app_views.route('/users/login', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user_login.yml', methods=['POST'])
 def login_user():
     """
     login a user
     """
+
     if not request.get_json():
         abort(400, description="Not a JSON")
 
@@ -94,6 +96,8 @@ def login_user():
 
     email = request.json['email']
     password = request.json['password']
+
+
 
     # Find the user by email
     # user = User.query.filter_by(email=email).first()
@@ -109,9 +113,33 @@ def login_user():
 
     # Generate and return an authentication token
     #later
+    # Set the user_id cookie
+    response = make_response(jsonify({'user': user.to_dict()}), 200)
+    response.set_cookie('user_id', str(user.id))
 
     # You may want to return additional user information along with the token
-    return jsonify({'user': user.to_dict()}), 200
+    return response
+
+
+@app_views.route('/profile', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/user/get_user_profile.yml', methods=['GET'])
+def get_user_profile():
+    """
+    Get user profile based on cookies
+    """
+
+    # Retrieve the user_id from the cookie
+    user_id = request.cookies.get('user_id')
+
+    if user_id:
+        # If the user_id cookie exists, return the user profile
+        user = storage.get_user_by_id(user_id)
+        if user:
+            return jsonify({'user': user.to_dict()}), 200
+        else:
+            abort(404, description="User not found")
+    else:
+        abort(401, description="User not authenticated")
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
