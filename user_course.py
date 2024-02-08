@@ -16,7 +16,7 @@ course_one.save()
 lesson_one = Lesson(lesson_title="HTML5 TAGS", content="https://www.youtube.com/watch?v=ZhULGD5hNQs", course_id=course_one.id)
 lesson_one.save()
 #---------------------------
-user_one = User(email="admin@gmail.com", password="12345678", first_name="victor Osimehn", last_name="Omologo", username="admin", image_file="01", country="NG")
+user_one = User( first_name="victor", last_name="Osimehn", email="admin@gmail.com", password="12345678",phone_no="070000000", image_file="01")
 user_one.save()
 #---------------------------
 enrollment_user_one = Enrollment(course_id=course_one.id, user_id=user_one.id)

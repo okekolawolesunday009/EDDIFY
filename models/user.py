@@ -17,29 +17,24 @@ if models.storage_t == 'db':
 class User(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'users'
-        email = Column(String(128), nullable=False)
-        password = Column(String(128), nullable=False)
         first_name = Column(String(128), nullable=False)
         last_name = Column(String(128), nullable=False)
-        username= Column(String(128), nullable=True)
-        image_file = Column(String(50), nullable=False)
-        country = Column(String(50), nullable=False)
-        confirmed = Column(Boolean, default=False)
+        email = Column(String(128), nullable=False)
+        password = Column(String(128), nullable=False)
+        phone_no = Column(String(128), nullable=False)
+        image_file = Column(String(128), nullable=False)
         review = relationship("Review", backref="user", viewonly=False)
         enrollments = relationship('Enrollment', back_populates='user')
         enrolled_courses = relationship('Course', secondary=user_course_association, viewonly=False)
         # enrolled_courses = relationship('Course', secondary=user_course_association, back_populates='enrolled_user', viewonly=False)
     else:
-        email = ""
-        password = ""
         first_name = ""
         last_name = ""
-        username = ""
-        image_file = ""
+        email = ""
         password = ""
-        phone_number = ""
-        country = ""
         confirmed = ""
+        phone_no = ""
+        image_file = ""
 
     def __init__(self, *args, **kwargs):
         """initializes User"""

@@ -51,19 +51,29 @@ def delete_user(user_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/users/create', methods=['POST'], strict_slashes=False)
+@app_views.route('/users/signup', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user.yml', methods=['POST'])
-def post_user_login():
+def post_user_():
     """
-    login a user
+    create a user
     """
     if not request.get_json():
         abort(400, description="Not a JSON")
 
+    if 'first_name' not in request.get_json():
+        abort(400, description="Missing first_name")
+    if 'last_name' not in request.get_json():
+        abort(400, description="Missing last_name")
     if 'email' not in request.get_json():
         abort(400, description="Missing email")
     if 'password' not in request.get_json():
         abort(400, description="Missing password")
+    if 'phone_no' not in request.get_json():
+        abort(400, description="Missing phone_no")
+    if 'image_file' not in request.get_json():
+        abort(400, description="Missing image_file")
+    """if 'confirmed' not in request.get_json():
+        abort(400, description="Missing confirmed")"""
 
     data = request.get_json()
     instance = User(**data)
@@ -72,7 +82,7 @@ def post_user_login():
 
 @app_views.route('/users/login', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user_login.yml', methods=['POST'])
-def post_user():
+def login_user():
     """
     login a user
     """
@@ -101,7 +111,7 @@ def post_user():
     #later
 
     # You may want to return additional user information along with the token
-    return jsonify({}), 200
+    return jsonify({'user': user.to_dict()}), 200
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
