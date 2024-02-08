@@ -87,6 +87,19 @@ class DBStorage:
                 return value
             
         return None
+
+    def get_user(self, cls, val):
+        """get user based on values"""
+        if cls not in classes.values():
+            return None
+        all_cls = models.storage.all(cls)
+        for user in all_cls.values():
+            # Iterate through all attributes of the user object
+            for attr_name, attr_value in user.to_dict().items():
+                if attr_value == val:
+                    return user
+        return None
+
     def count(self, cls=None):
         """
         count the number of objects inn storage

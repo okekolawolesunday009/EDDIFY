@@ -51,11 +51,11 @@ def delete_user(user_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/users/login', methods=['POST'], strict_slashes=False)
+@app_views.route('/users/create', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user.yml', methods=['POST'])
-def post_user():
+def post_user_login():
     """
-    Creates a user
+    login a user
     """
     if not request.get_json():
         abort(400, description="Not a JSON")
@@ -69,6 +69,39 @@ def post_user():
     instance = User(**data)
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
+
+@app_views.route('/users/login', methods=['POST'], strict_slashes=False)
+@swag_from('documentation/user/post_user_login.yml', methods=['POST'])
+def post_user():
+    """
+    login a user
+    """
+    if not request.get_json():
+        abort(400, description="Not a JSON")
+
+    if 'email' not in request.json or 'password' not in request.json:
+        abort(400, description="Missing email or password")
+
+    email = request.json['email']
+    password = request.json['password']
+
+    # Find the user by email
+    # user = User.query.filter_by(email=email).first()
+    user = storage.get_user(User, email)
+
+
+    if not user:
+        abort(401, description="Invalid email or password")
+
+    # Verify the password
+    if not user.password:
+        abort(401, description="Invalid email or password")
+
+    # Generate and return an authentication token
+    #later
+
+    # You may want to return additional user information along with the token
+    return jsonify({}), 200
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
