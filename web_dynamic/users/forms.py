@@ -5,7 +5,6 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_login import current_user
 from models.user import User
 import models
-import requests
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
@@ -264,10 +263,17 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign in')
 
     def validate_username(self, username):
-          
-          user = models.storage.all(User).keys()
-          for username in user[username].values()
-                raise ValidationError('That username is taken. Please choose another')
+          user = models.storage.all(User)
+          for use in user.values():
+                
+                if use.username == username.data:
+                    raise ValidationError('That username is taken. Please choose another')
+                
+    def validate_email(self, email):
+          user = models.storage.all(User)
+          for use in user.values():
+                if use.email == email.data:
+                    raise ValidationError('That email is taken. Please choose another')
 
 class LoginForm(FlaskForm):
 	email = StringField('Email', validators=[DataRequired(), Email()])
