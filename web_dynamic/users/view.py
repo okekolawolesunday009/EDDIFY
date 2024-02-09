@@ -1,5 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
-# from flask_login import login_user, current_user, logout_user, login_required
+from flask_login import login_user, current_user, logout_user, login_required
 from web_dynamic.users.forms import RegistrationForm, LoginForm
 from web_dynamic import bcrypt
 from models import storage
@@ -10,8 +10,8 @@ users = Blueprint('users', __name__)
 
 @users.route("/register", methods=['POST', 'GET'], strict_slashes=False)
 def register():
-    # if current_user.is_authenticated:
-    #     return redirect(url_for('main.home'))
+    if current_user.is_authenticated:
+        return redirect(url_for('users.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hash_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -24,16 +24,32 @@ def register():
 
 @users.route("/login", methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('users.home'))
     form = LoginForm()
     if form.validate_on_submit():
-        if form.email.data == 'timidotcom58@gmail.com' and form.password.data == 'password':
-            flash('You have been logged in!', 'success')
-            return redirect(url_for('users.home'))
+        user = models.storage.all(User)
+        for use in user.values():
+            if use.email == form.email.data:
+                user_profile = use
+                break
+        if user_profile and bcrypt.check_password_hash(user_profile.password, form.password.data):
+                login_user(user_profile, remember=form.remember.data)
+                flash('You have been logged in!', 'success')
+                return redirect(url_for('users.home'))
         else:
             flash('Login Unsuccessful, Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
 
+
+
 @users.route("/home", methods=['GET', 'POST'])     
 def home():
-    return render_template('home.html')    
+    return render_template('home.html')   
+
+
+@users.route("/logout", strict_slashes=False)
+def logout():
+    logout_user()
+    return redirect(url_for('users.register'))
