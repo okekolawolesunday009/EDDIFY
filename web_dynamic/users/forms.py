@@ -265,7 +265,6 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
           user = models.storage.all(User)
           for use in user.values():
-                
                 if use.username == username.data:
                     raise ValidationError('That username is taken. Please choose another')
                 
