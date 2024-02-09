@@ -24,7 +24,7 @@ class Course(BaseModel, Base):
         lessons = relationship("Lesson", backref="course", viewonly=False)
         enrollments = relationship("Enrollment", back_populates="course", cascade="all, delete, delete-orphan")
         reviews = relationship("Review",
-                               backref="place",
+                               backref="course",
                                cascade="all, delete, delete-orphan")
 
         
