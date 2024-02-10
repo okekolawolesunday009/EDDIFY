@@ -1,0 +1,42 @@
+.nav_image img{
+    width: 150px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+header .navigation_bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header .navigation_bar li {
+    margin: 0 50px; 
+}
+
+header .navigation_bar li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; 
+    background-color: #5A49E3;
+    transition: width 0.3s;
+}
+
+header .navigation_bar li:hover::after {
+    width: 100%;
+}
+
+header .navigation_bar a {
+    text-decoration: none;
+}
+
+
