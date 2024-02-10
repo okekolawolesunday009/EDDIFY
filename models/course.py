@@ -1,6 +1,6 @@
 # such as course ID, title, description, instructor ID (foreign key referencing Users table), etc.
 #!/usr/bin/python
-""" holds class Place"""
+""" holds class Coursefrom models.base_model import BaseModel,"""
 import models
 from models.base_model import BaseModel, Base
 from os import getenv

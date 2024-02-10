@@ -30,6 +30,15 @@ def get_course(course_id):
         abort(404)
     return jsonify(course.to_dict())
 
+@app_views.route('/profile/courses/<user_id>/enrolled-courses', methods=['GET'],
+                 strict_slashes=False)
+def get_user_course(user_id):
+    """ Retrieves a user so we can get courses enrolled """
+    user_course = storage.get(User, user_id)
+    if not user_course:
+        abort(404)
+    return jsonify(user_course.to_dict())
+
 
 
 @app_views.route('/courses/<course_id>/', methods=['DELETE'],

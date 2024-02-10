@@ -7,11 +7,14 @@ from flask import Flask, render_template, make_response, jsonify
 from flask_cors import CORS
 from flasgger import Swagger
 from flasgger.utils import swag_from
+import jwt 
+from functools import wraps
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+app.config['SECRET_KEY'] = "8745E34566SDFF"
 
 
 @app.teardown_appcontext
@@ -36,6 +39,7 @@ app.config['SWAGGER'] = {
 }
 
 Swagger(app)
+
 
 
 if __name__ == "__main__":
