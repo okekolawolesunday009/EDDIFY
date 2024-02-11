@@ -1,11 +1,12 @@
 .nav_image img{
-    width: 150px;
+    width: 200px;
 }
 
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 40px 0 40px;
 }
 
 
@@ -20,6 +21,10 @@ header .navigation_bar ul {
 
 header .navigation_bar li {
     margin: 0 50px; 
+}
+
+header .navigation_bar li a{
+    font-size: 1.2rem;
 }
 
 header .navigation_bar li::after {
@@ -39,4 +44,187 @@ header .navigation_bar a {
     text-decoration: none;
 }
 
+.move_icon{
+    margin-left: 5px;
+}
 
+.cc{
+    display: flex;
+}
+
+
+.sign_up button{
+    border: none;
+    padding: 20px 40px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5A49E3;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.sign_up button:hover{
+    background-color: #3925cf;
+}
+
+main{
+    margin: 20px 40px 0 40px;
+}
+
+.hero_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80vh;
+}
+
+.grid_photo1{
+    height: 700px;
+    width: 250px;
+    background-color: #3925cf;
+    border-radius: 50px;
+    background-image: url(../images/zaini-izzuddin-55btQzyDiO8-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.first_grid h1{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-right: 150px;
+}
+
+.first_grid > p{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.grid_photo2{
+    height: 700px;
+    width: 250px;
+    background-color: #3925cf;
+    border-radius: 50px;
+    margin-top: 110px;
+    background-image: url(../images/nishaan-ahmed-6w1S7xS6AnM-unsplash.jpg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first_grid button{
+    margin-top: 20px;
+    border: none;
+    padding: 20px 40px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5A49E3;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.first_grid button:hover{
+    background-color: #3925cf;
+}
+
+.second_grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.tick{
+    display: flex;
+    align-items: center;
+}
+
+.tick i{
+    padding: 15px;
+    background-color: #5A49E3;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.tick p{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.course{
+    margin-top: 150px;
+}
+
+.course_hd_txt h1{
+    font-weight: bold;
+}
+
+.course_hd_txt > p{
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.course_hd_txt ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.course_hd_txt ul li{
+   margin: 0 20px;
+}
+
+.Course_video article{
+    width: 380px;
+    height: 490px;
+    margin-top: 70px;
+    background-color: rgb(228, 223, 223);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Course_video article > h1{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+
+.Course_video article > h1, p, div{
+    padding-left: 10px;
+}
+
+.img_cover{
+    width: 380px;
+    height: 250px;
+    background-image: url(../images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.rating{
+    display: flex;
+    padding: 0;
+}
+
+.price{
+    padding: 0;
+    display: flex;
+
+}
+
+.slash_price{
+    padding-right: 30px;
+}
+
+.rating > div{
+    margin-right: 20px;
+}
