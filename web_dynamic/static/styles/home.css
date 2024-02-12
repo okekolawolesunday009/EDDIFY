@@ -1,6 +1,12 @@
+/* *{
+    font-family: poppins;
+} */
+
 .nav_image img{
     width: 200px;
 }
+
+
 
 .navbar{
     display: flex;
@@ -68,14 +74,13 @@ header .navigation_bar a {
     background-color: #3925cf;
 }
 
-main{
-    margin: 20px 40px 0 40px;
-}
+
 
 .hero_section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 80vh;
+    margin: 20px 40px 0 40px;
 }
 
 .grid_photo1{
@@ -158,6 +163,7 @@ main{
 
 .course{
     margin-top: 150px;
+    margin: 20px 40px 0 40px;
 }
 
 .course_hd_txt h1{
@@ -196,7 +202,16 @@ main{
 
 
 
-.Course_video article > h1, p, div{
+.Course_video article > h1{
+    padding-left: 10px;
+}
+
+
+.Course_video article  > p{
+    padding-left: 10px;
+}
+
+.Course_video article > div{
     padding-left: 10px;
 }
 
@@ -223,8 +238,194 @@ main{
 
 .slash_price{
     padding-right: 30px;
+    text-decoration: line-through;
+    text-decoration-skip-ink: auto;
 }
 
 .rating > div{
     margin-right: 20px;
+}
+
+.Course_video{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: center;
+    align-items: center;
+}
+
+.view{
+    border: 1px solid #5A49E3;
+    background-color: #fff;
+    padding: 20px 100px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: #5A49E3;
+    transition: background-color 0.3s;
+}
+
+.view:hover{
+    background-color: #5A49E3;
+    color: #fff;
+}
+
+.rating > div i{
+    color: gold;
+}
+
+.banner{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #5A49E3;
+    padding: 100px 0 100px;
+}
+
+.banner h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #fff;
+
+}
+
+.banner p{
+    color: #fff;
+}
+
+.banner_list{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.know{
+    margin: 20px 40px 100px 40px;
+}
+
+.know_grid1{
+    padding: 0;
+}
+
+.know_grid1 h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+.prof{
+    margin-top: 60px;
+}
+
+.know_grid1 h1{
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.know_grid1 > p{
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.prof_flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.prof_flex .fl{
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #5A49E3;
+    border-radius: 50%;
+    color: white;
+}
+
+
+
+.know_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.prof div i{
+    margin: 0;
+    padding: 0;
+}
+
+.user_txt h1, p{
+    padding: 0;
+    margin: 0;
+}
+
+.user_txt h1{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.user_txt p{
+    font-size: 1rem;
+    padding-right: 150px;
+
+}
+
+.know_img{
+    width: 500px;
+    height: 620px;
+    background-image: url(../images/zaini-izzuddin-55btQzyDiO8-unsplash.jpg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.know_grid2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Testimony{
+    margin: 20px 40px 100px 40px;
+}
+
+.testimony_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.testimony1 > h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5A49E3;
+}
+
+.testimony1 > p{
+    font-weight: 200;
+
+}
+
+.button{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    width: 17%;
+}
+
+.button i{
+    padding: 25px;
+    background-color: #5A49E3;
+    border-radius: 100%;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.button i:hover{
+    background-color: white;
+    color: #5A49E3;
+    border: 1px solid #5A49E3;
 }

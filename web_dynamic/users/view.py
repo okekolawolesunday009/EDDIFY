@@ -43,7 +43,7 @@ def login():
 
 
 
-
+@users.route("/", methods=['GET', 'POST'])
 @users.route("/home", methods=['GET', 'POST'])     
 def home():
     return render_template('home.html')   
