@@ -390,7 +390,7 @@ header .navigation_bar a {
 }
 
 .Testimony{
-    margin: 20px 40px 100px 40px;
+    margin: 250px 40px 100px 40px;
 }
 
 .testimony_grid{
@@ -428,4 +428,106 @@ header .navigation_bar a {
     background-color: white;
     color: #5A49E3;
     border: 1px solid #5A49E3;
+}
+
+.Testimony
+
+.image_carosle{
+    display: flex;
+    position: relative;
+}
+
+.image_carosle img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-right: -25px;
+    position: relative;
+}
+
+.image_carosle i{
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    left: 112px;
+    top: 9px;
+}
+
+.testimony2{
+    position: relative;
+}
+
+.bio{
+    background-color: rgb(235, 235, 235);
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.author_pic{
+    width: 420px;
+    height: 500px;
+    background-image: url(../images/TImi.jpeg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 400px;
+    bottom: 0px;
+    border-radius: 10px;
+}
+
+.bio > h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.bio > h3{
+    font-weight: 200;
+}
+
+.bio > p{
+    font-weight: 100;
+}
+
+
+.instruc_txt{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.instruc_txt h1{
+    color: #5A49E3;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.instruc_txt h4{
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.instruc_txt p{
+    width: 50%;
+    text-align: center;
+}
+
+.instuctor_img{
+    background-image: url(../images/TImi.jpeg);
+    width: 400PX;
+    height: 400px;
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ins_bio_grid{
+
+    display: flex;
 }
