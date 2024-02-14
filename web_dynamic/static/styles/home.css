@@ -26,7 +26,7 @@ header .navigation_bar ul {
 }
 
 header .navigation_bar li {
-    margin: 0 50px; 
+    padding: 0 50px; 
 }
 
 header .navigation_bar li a{
@@ -455,6 +455,7 @@ header .navigation_bar a {
 }
 
 .testimony2{
+    display: flex;
     position: relative;
 }
 
@@ -472,9 +473,9 @@ header .navigation_bar a {
     background-position: center center; 
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    /* position: absolute;
     left: 400px;
-    bottom: 0px;
+    bottom: 0px; */
     border-radius: 10px;
 }
 
@@ -493,6 +494,10 @@ header .navigation_bar a {
 }
 
 
+.instructor{
+    
+    margin: 100px 40px 0 40px;
+}
 .instruc_txt{
     display: flex;
     align-items: center;
@@ -514,20 +519,200 @@ header .navigation_bar a {
 }
 
 .instruc_txt p{
-    width: 50%;
+    width: 60%;
     text-align: center;
+    font-size: 1.3rem;
 }
 
+
+.intructor_bio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(570px, 1fr));
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width to ensure centering is noticeable */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* .intructor_bio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 100px;
+} */
+
+.ins_bio_grid{
+    display: flex;
+    width: 600px;
+    margin-bottom: 120px;
+}
+
+.bio_article{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 20px;
+
+}
+
+.bio_article > h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bio_article > a{
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.bio_article >  a span{
+    margin-left: 10px;
+}
 .instuctor_img{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     background-image: url(../images/TImi.jpeg);
-    width: 400PX;
-    height: 400px;
+    width: 700px;
+    height: 500px;
     background-position: center center; 
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
 }
 
-.ins_bio_grid{
 
+.instuctor_img a{
+    color: #5A49E3;
+    z-index: 3;
+    padding-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.instuctor_img a i{
+    font-size: 2rem;
+}
+
+.instuctor_img:hover a{
+    opacity: 1;
+}
+
+
+
+
+
+.email_banner{
+    background-image: url(../images/element5-digital-OyCl7Y4y0Bk-unsplash.jpg);
+    background-position: center bottom; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
     display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 150px;
+}
+
+.email_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.email_form h1{
+    color: #5A49E3;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.email_form p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #5A49E3;
+}
+
+.email{
+    padding: 20px 350px 20px 10px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.sub{
+    padding: 20px 50px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5A49E3;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.email_form form{
+    margin-top: 40px;
+}
+
+footer{
+    margin: 20px 40px 80px 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+footer .logo_intro{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.logo_intro p{
+    width: 400px;
+    font-size: 1rem;
+}
+
+.cont_info a i{
+    font-size: 2rem;
+    color: #5A49E3;
+    margin-right: 20px;
+}
+
+.img_src img{
+    width:170px;
+    margin-bottom: 10px;
+}
+
+.logo_intro > p{
+    margin-bottom: 15px;
+}
+
+.popular_courses h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.popular_courses p{
+    margin-bottom: 10px;
+}
+
+.contact h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contact p{
+    margin-bottom: 10px;
 }
