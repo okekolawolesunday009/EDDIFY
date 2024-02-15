@@ -35,6 +35,7 @@ def login():
                 break
         if user_profile and bcrypt.check_password_hash(user_profile.password, form.password.data):
                 login_user(user_profile, remember=form.remember.data)
+                next_page = request.args.get('next') 
                 flash('You have been logged in!', 'success')
                 return redirect(url_for('users.home'))
         else:
@@ -44,7 +45,8 @@ def login():
 
 
 @users.route("/", methods=['GET', 'POST'])
-@users.route("/home", methods=['GET', 'POST'])     
+@users.route("/home", methods=['GET', 'POST'])  
+@login_required  
 def home():
     return render_template('home.html')   
 

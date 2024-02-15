@@ -8,7 +8,7 @@ from sqlalchemy import Column, String, Integer, Boolean
 from sqlalchemy.orm import relationship
 from hashlib import md5
 """This imported function are to be used for user authentication"""
-from web_dynamic import login_manager, app
+# from web_dynamic import login_manager, app
 from flask_login import UserMixin
 
 if models.storage_t == 'db':
@@ -17,10 +17,10 @@ if models.storage_t == 'db':
                             Base.metadata, Column('UserID', String(60), ForeignKey('users.id')),
                   		    Column('CourseID', String(60), ForeignKey('courses.id')))
     
-if models.storage_t == 'db':
-    @login_manager.user_loader
-    def load_user(user_id):
-	    return models.storage.get(User, user_id)
+# if models.storage_t == 'db':
+#     @login_manager.user_loader
+#     def load_user(user_id):
+# 	    return models.storage.get(User, user_id)
 
 class User(BaseModel, UserMixin, Base):
     if models.storage_t == 'db':

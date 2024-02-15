@@ -21,7 +21,7 @@ class Course(BaseModel, Base):
         number_lesson = Column(Integer, nullable=False, default=0)
         hours_lesson = Column(Integer, nullable=False, default=0)
         number_quiz = Column(Integer, nullable=False, default=0)
-        lessons = relationship("Lesson", backref="course", viewonly=False)
+        lessons = relationship("Lesson", backref="course", cascade="all, delete, delete-orphan",viewonly=False)
         enrollments = relationship("Enrollment", back_populates="course", cascade="all, delete, delete-orphan")
         reviews = relationship("Review",
                                backref="course",

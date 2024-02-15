@@ -10,6 +10,15 @@
 </head>
 <body>
     <header>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
         <nav class="navbar">
             <div class="nav_image">
                 <img src="../static/images/Eddify-logos_transparent.png" alt="">
@@ -26,7 +35,14 @@
                 </ul>
             </div>
             {% if current_user.is_authenticated %}
-                <div>loginin</div>
+                <div class="avatar">
+                    <div>
+                        <a href=""><img src="{{ image_file }}" alt=""><span><i class="fa-solid fa-angle-down"></i></span></a>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
             {% else %}
                 <div class="sign_up">
                     <a href="{{ url_for('users.register') }}"><button>Sign in</button></a>
@@ -395,14 +411,6 @@
             <p><span>Phone:</span>08035588623</p>
         </div>
     </footer>
-    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-    {% endwith %} -->
+    
 </body>
 </html>
