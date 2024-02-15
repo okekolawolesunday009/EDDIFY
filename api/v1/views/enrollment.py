@@ -9,6 +9,7 @@ from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
 
+
 @app_views.route('/user/<user_id>/enrollments', methods=['GET'],
                  strict_slashes=False)
 def get_enrollment(user_id):
