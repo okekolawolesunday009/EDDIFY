@@ -5,8 +5,9 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_moment import Moment
 import models
+from flask_login import UserMixin
 
-from models.user import User
+
 
 app = Flask(__name__)
 
@@ -29,6 +30,7 @@ from web_dynamic.users.view import users
 app.register_blueprint(users)
 
 if models.storage_t == 'db':
+    from models.user import User
     @login_manager.user_loader
     def load_user(user_id):
 	    return models.storage.get(User, user_id)

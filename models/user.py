@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """class user model"""
+
 from flask_login import UserMixin
 from models.base_model import BaseModel, Base
 import models

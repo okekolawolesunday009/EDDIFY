@@ -2,8 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from web_dynamic.users.forms import RegistrationForm, LoginForm
 from web_dynamic import bcrypt
-from models import storage
-from models.user import User
+# from models.user import User
 import models
 
 users = Blueprint('users', __name__)
@@ -14,6 +13,7 @@ def register():
         return redirect(url_for('users.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
+        from models.user import User
         hash_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username=form.username.data, email=form.email.data, password=hash_password, first_name=form.first_name.data, last_name=form.last_name.data, country=form.country.data)
         models.storage.new(user)  
