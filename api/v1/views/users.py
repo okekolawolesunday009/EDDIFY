@@ -39,9 +39,8 @@ def token_required(func):
 
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
-@token_required
 @swag_from('documentation/user/all_users.yml')
-def get_users(current_user):
+def get_users():
     """
     Retrieves the list of all user objects
     or a specific user
@@ -82,39 +81,37 @@ def delete_user(user_id):
 
     return make_response(jsonify({}), 200)
 
-
-@app_views.route('/users/signup', methods=['POST'], strict_slashes=False)
+@app_views.route('/signup', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user.yml', methods=['POST'])
-def post_user_():
+def post_user():
     """
-    create a user
+    Create a user
     """
     if not request.get_json():
         abort(400, description="Not a JSON")
 
-    if 'first_name' not in request.get_json():
-        abort(400, description="Missing first_name")
-    if 'last_name' not in request.get_json():
-        abort(400, description="Missing last_name")
-    if 'email' not in request.get_json():
-        abort(400, description="Missing email")
-    if 'password' not in request.get_json():
-        abort(400, description="Missing password")
-    if 'phone_no' not in request.get_json():
-        abort(400, description="Missing phone_no")
-    if 'image_file' not in request.get_json():
-        abort(400, description="Missing image_file")
-    """if 'confirmed' not in request.get_json():
-        abort(400, description="Missing confirmed")"""
+    required_fields = ['first_name', 'last_name', 'email', 'password', 'phone_no', 'image_file']
+    missing_fields = [field for field in required_fields if field not in request.get_json()]
+    if missing_fields:
+        abort(400, description=f"Missing fields: {', '.join(missing_fields)}")
 
     data = request.get_json()
     instance = User(**data)
     instance.save()
-    return make_response(jsonify(instance.to_dict()), 201)
+    
+    token = jwt.encode({
+        "user": instance.id,
+        "expiration": str(datetime.utcnow() + timedelta(minutes=120))
+        },
+        app.config['SECRET_KEY'])
+    return jsonify({
+            "token" : token
+            }), 200
+
+#return make_response(jsonify(instance.to_dict()), 201)
 
 
-
-@app_views.route('/users/login', methods=['POST'], strict_slashes=False)
+@app_views.route('/login', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/user/post_user_login.yml', methods=['POST'])
 def login_user():
     """
@@ -155,8 +152,6 @@ def login_user():
             }), 200
 
 
-from flask import request, jsonify
-import jwt
 
 @app_views.route('/auth', methods=['GET'], strict_slashes=False)
 @token_required

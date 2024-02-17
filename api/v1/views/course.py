@@ -2,10 +2,28 @@
 """ objects that handles all default RestFul API actions for Amenities"""
 from models.course import Course 
 from models.category import Category
+from models.enrollment import Enrollment
 from models import storage
 from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
+
+
+
+@app_views.route('/category', methods=['GET'], strict_slashes=False)
+def get_catgory():
+    """
+    Retrieves all categories
+    """
+    list_category = []
+    category = storage.all(Category).values()
+    print(category)
+    if not category:
+        abort(404)
+    for cat in category:
+        list_category.append(cat.to_dict())
+    return jsonify(list_category)
+
 
 @app_views.route('/category/<category_id>/courses', methods=['GET'], strict_slashes=False)
 def get_courses(category_id):
@@ -26,15 +44,30 @@ def get_courses(category_id):
 def get_course(course_id):
     """ Retrieves an course """
     course = storage.get(Course, course_id)
+    print(course)
     if not course:
         abort(404)
     return jsonify(course.to_dict())
+
+@app_views.route('/courses', methods=['GET'],
+                 strict_slashes=False)
+def get_all_course():
+    """ Retrieves all course """
+    courses = storage.all(Course).values()
+    if not courses:
+        abort(404)
+
+    courses_data = [course.to_dict() for course in courses]
+    return jsonify(courses_data)
+    #jsonify(course.to_dict())
+
 
 @app_views.route('/profile/courses/<user_id>/enrolled-courses', methods=['GET'],
                  strict_slashes=False)
 def get_user_course(user_id):
     """ Retrieves a user so we can get courses enrolled """
-    user_course = storage.get(User, user_id)
+    user_course = storage.get(Enrollment, user_id)
+    print(user_course)
     if not user_course:
         abort(404)
     return jsonify(user_course.to_dict())
