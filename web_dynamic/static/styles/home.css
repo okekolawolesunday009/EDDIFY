@@ -716,3 +716,61 @@ footer .logo_intro{
 .contact p{
     margin-bottom: 10px;
 }
+.user_profile{
+    position: absolute;
+    right: 25px;
+    top: 123px;
+}
+
+.profile_list{
+    background-color: #cfcfcf;
+    padding: 50px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    border-radius: 10px;
+    display: none;
+}
+
+.pro_click{
+    cursor: pointer;
+    /* transition: display 0.3s ease; */
+}
+
+.avatar_pro{
+    background-color: #c70a0a;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+.close{
+    margin-left: 180px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5A49E3;
+}
+.profile_list li{
+    list-style: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.profile_list li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.profile_list li a i{
+    font-size: 1.5rem;
+    padding-right: 20px;
+    list-style: none;
+    color: #5A49E3;
+}
+
+.profile_list li a h2{
+    font-size: 1.5rem;
+    color: #5A49E3;
+}
