@@ -1,0 +1,55 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.logo_section{
+    background-color: #5A49E3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_section img{
+    height: 700px;
+    width: 700px;
+}
+
+.form-control{
+    width: 500px;
+}
+
+.form-group{
+    margin-bottom: 25px;
+}
+
+.register_section{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+legend{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.btn{
+    width: 500px;
+    height: 60px;
+    font-weight: bold;
+    background-color: #5A49E3;
+    color: white;
+    transition: background-color 0.3;
+}
+
+.btn:hover{
+    background-color: #1c03d8;
+    color: white;
+}
+
+.switch{
+    margin-top: 10px;
+}

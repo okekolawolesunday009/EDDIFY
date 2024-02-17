@@ -7,14 +7,22 @@ from sqlalchemy import Table, ForeignKey
 from sqlalchemy import Column, String, Integer, Boolean
 from sqlalchemy.orm import relationship
 from hashlib import md5
+"""This imported function are to be used for user authentication"""
+from web_dynamic import login_manager, app
+from flask_login import UserMixin
 
 if models.storage_t == 'db':
     """many to many  relationship it connect user to course and course to user"""
     user_course_association = Table('user_course_association',
                             Base.metadata, Column('UserID', String(60), ForeignKey('users.id')),
                   		    Column('CourseID', String(60), ForeignKey('courses.id')))
+    
+if models.storage_t == 'db':
+    @login_manager.user_loader
+    def load_user(user_id):
+	    return models.storage.get(User, user_id)
 
-class User(BaseModel, Base):
+class User(BaseModel, UserMixin, Base):
     if models.storage_t == 'db':
         __tablename__ = 'users'
         first_name = Column(String(128), nullable=False)
@@ -23,6 +31,7 @@ class User(BaseModel, Base):
         password = Column(String(128), nullable=False)
         phone_no = Column(String(128), nullable=False)
         image_file = Column(String(128), nullable=False)
+
         review = relationship("Review", backref="user", viewonly=False)
         enrollments = relationship('Enrollment', back_populates='user')
         enrolled_courses = relationship('Course', secondary=user_course_association, viewonly=False)

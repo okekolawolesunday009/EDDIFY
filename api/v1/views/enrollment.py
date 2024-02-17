@@ -94,12 +94,12 @@ def post_courses(user_id):
     return make_response(jsonify(instance.to_dict()), 201)
 
 
-@app_views.route('/reviews/<review_id>', methods=['PUT'], strict_slashes=False)
-def put_reviews(review_id):
+@app_views.route('/enrollment/<enrollment_id>', methods=['PUT'], strict_slashes=False)
+def put_enrollment(enrollment_id):
     """
     Updates a Review
     """
-    review = storage.get(Review, review_id)
+    en = storage.get(Review, review_id)
 
     if not review:
         abort(404)
@@ -114,4 +114,4 @@ def put_reviews(review_id):
         if key not in ignore:
             setattr(review, key, value)
     storage.save()
-    return make_response(jsonify(review.to_dict()), 200)
+    return make_response(jsonify(en.to_dict()), 200)
