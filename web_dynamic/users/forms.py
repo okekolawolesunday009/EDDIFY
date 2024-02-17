@@ -3,7 +3,7 @@ from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Regexp
 from flask_login import current_user
-from models.user import User
+
 import models
 
 class RegistrationForm(FlaskForm):
@@ -263,6 +263,7 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign in')
 
     def validate_username(self, username):
+          from models.user import User
           user = models.storage.all(User)
           for use in user.values():
                 if use.username == username.data:

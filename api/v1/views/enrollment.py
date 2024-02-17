@@ -62,9 +62,9 @@ def delete_enrollment(enrollment_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/course/<user_id>/reviews', methods=['POST'],
+@app_views.route('/course/<user_id>/enrollments', methods=['POST'],
                  strict_slashes=False)
-def post_courses(user_id):
+def post_enrollment(user_id):
     """
     Creates a Review
     """
@@ -89,7 +89,7 @@ def post_courses(user_id):
         abort(400, description="Missing text")
 
     data['user_id'] = user_id
-    instance = Review(**data)
+    instance = Enrollment(**data)
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
 
@@ -97,7 +97,7 @@ def post_courses(user_id):
 @app_views.route('/enrollment/<enrollment_id>', methods=['PUT'], strict_slashes=False)
 def put_enrollment(enrollment_id):
     """
-    Updates a Review
+    Updates a Enrollment
     """
     en = storage.get(Review, review_id)
 
