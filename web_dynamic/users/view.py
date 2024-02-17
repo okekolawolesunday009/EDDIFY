@@ -28,6 +28,7 @@ def login():
         return redirect(url_for('users.home'))
     form = LoginForm()
     if form.validate_on_submit():
+        from models.user import User
         user = models.storage.all(User)
         for use in user.values():
             if use.email == form.email.data:
