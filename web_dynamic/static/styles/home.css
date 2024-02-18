@@ -1,6 +1,6 @@
-/* *{
-    font-family: poppins;
-} */
+*{
+    font-family: "Poppins", sans-serif;
+}
 
 .nav_image img{
     width: 200px;
@@ -80,7 +80,7 @@ header .navigation_bar a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 80vh;
-    margin: 20px 40px 0 40px;
+    margin: 20px 40px 150px 40px;
 }
 
 .grid_photo1{
@@ -643,6 +643,7 @@ header .navigation_bar a {
     font-size: 1.2rem;
     font-weight: 300;
     color: #5A49E3;
+    text-align: center;
 }
 
 .email{
@@ -670,6 +671,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    gap: 30px;
     
 }
 
@@ -723,12 +725,18 @@ footer .logo_intro{
 }
 
 .profile_list{
-    background-color: #cfcfcf;
+    backdrop-filter: blur(150px);
     padding: 50px;
     padding-top: 30px;
     padding-bottom: 70px;
     border-radius: 10px;
     display: none;
+
+}
+
+.close{
+    cursor: pointer;
+    transition: display 0.3 ease;
 }
 
 .pro_click{
@@ -773,4 +781,59 @@ footer .logo_intro{
 .profile_list li a h2{
     font-size: 1.5rem;
     color: #5A49E3;
+}
+
+
+@media screen and (max-width: 1115px) {
+    header .navigation_bar li {
+        padding: 0 29px;
+    }
+
+    .hero_section{
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+    }
+
+    .second_grid{
+        display: none;
+    }
+
+    .know_grid{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .know_img{
+        width: 100%;
+    }
+
+    .testimony_grid{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .testimony1{
+        height: 500px;
+    }
+}
+
+
+@media screen and (max-width: 966px) {
+    header .navigation_bar li{
+        display: none;
+    }
+
+    .Course_video article{
+        margin: 0 auto;
+    }
+
+    .email{
+        padding: 20px 250px 20px 10px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    footer{
+        flex-direction: column;
+    }
 }

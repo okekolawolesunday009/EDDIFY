@@ -47,7 +47,6 @@ def login():
 
 @users.route("/", methods=['GET', 'POST'])
 @users.route("/home", methods=['GET', 'POST'])  
-@login_required  
 def home():
     return render_template('home.html')   
 
