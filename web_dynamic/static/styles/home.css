@@ -179,10 +179,12 @@ header .navigation_bar a {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .course_hd_txt ul li{
    margin: 0 20px;
+   
 }
 
 .Course_video article{
@@ -251,6 +253,7 @@ header .navigation_bar a {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     justify-content: center;
     align-items: center;
+
 }
 
 .view{
@@ -430,7 +433,7 @@ header .navigation_bar a {
     border: 1px solid #5A49E3;
 }
 
-.Testimony
+
 
 .image_carosle{
     display: flex;
@@ -456,19 +459,21 @@ header .navigation_bar a {
 
 .testimony2{
     display: flex;
-    position: relative;
+    
 }
 
 .bio{
+    display: flex;
     background-color: rgb(235, 235, 235);
     padding: 50px;
-    width: 50%;
+    width: 100%;
     margin-top: 50px;
 }
 
+
+
 .author_pic{
-    width: 420px;
-    height: 500px;
+    padding: 200px;
     background-image: url(../images/TImi.jpeg);
     background-position: center center; 
     background-size: cover;
@@ -825,10 +830,23 @@ footer .logo_intro{
 
     .Course_video article{
         margin: 0 auto;
+        margin-top: 100px;
     }
 
     .email{
         padding: 20px 250px 20px 10px;
+    }
+
+    .course_hd_txt ul {
+        
+        margin-top: 10px;
+      }
+}
+
+@media screen and (max-width: 901px){
+    .bio{
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
@@ -836,4 +854,64 @@ footer .logo_intro{
     footer{
         flex-direction: column;
     }
+
+    .email_form h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .course{
+        margin-top: 100px;
+    }
+
+    .email{
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 648px){
+    .sub{
+        padding: 20px 35px 20px;
+    }
+
+    .ins_bio_grid {
+        display: flex;
+        width: 428px;
+        margin-bottom: 120px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+      }
+}
+
+@media screen and (max-width: 631px){
+    .email{
+        padding-right: 80px;
+    }
+
+    .course_hd_txt ul{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 629px){
+    .author_pic{
+        padding: 108px 39px 260px 20px;
+    }
+}
+
+@media screen and (max-width: 594px) {
+    .course{
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 526px){
+    .course{
+        margin-top: 200px;
+    }
+
+    .course_hd_txt ul {
+        flex-wrap: wrap;
+      }
 }
