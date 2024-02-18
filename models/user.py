@@ -29,7 +29,7 @@ class User(BaseModel, UserMixin, Base):
         password = Column(String(128), nullable=False)
         phone_no = Column(String(128), nullable=False)
         image_file = Column(String(128), nullable=False)
-
+        
         review = relationship("Review", backref="user", viewonly=False)
         enrollments = relationship('Enrollment', back_populates='user')
         enrolled_courses = relationship('Course', secondary=user_course_association, viewonly=False)
