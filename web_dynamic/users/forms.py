@@ -270,6 +270,7 @@ class RegistrationForm(FlaskForm):
                     raise ValidationError('That username is taken. Please choose another')
                 
     def validate_email(self, email):
+          from models.user import User
           user = models.storage.all(User)
           for use in user.values():
                 if use.email == email.data:
