@@ -9,12 +9,14 @@ from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
 
-
-@app_views.route('/user/<user_id>/enrollments', methods=['GET'],
-                 strict_slashes=False)
-def get_enrollment(user_id):
+@app_views.route('/user/<user_id>/enrollments', methods=['GET'], strict_slashes=False)
+def get_user_enrollment(user_id):
     """
+<<<<<<< HEAD
     Retrieves the list of all Enrollments objects of a Course
+=======
+    Retrieves the list of all enrollments for a user
+>>>>>>> main
     """
     user = storage.get(User, user_id)
 
@@ -22,12 +24,20 @@ def get_enrollment(user_id):
         abort(404)
 
     enrollments = [enrollment.to_dict() for enrollment in user.enrollments]
+    enrollments_with_courses = []
 
-    return jsonify(enrollments)
+    for enrollment in enrollments:
+        course_id = enrollment["course_id"]
+        course = storage.get(Course, course_id)
+        if course:
+            enrollment["course"] = course.to_dict()
+        enrollments_with_courses.append(enrollment)
+
+    return jsonify(enrollments_with_courses)
 
 
 @app_views.route('/enrollments/<enrollment_id>', methods=['GET'], strict_slashes=False)
-def get_review(enrollment_id):
+def get_enrollment(enrollment_id):
     """
     Retrieves a enrollment object
     """
@@ -40,7 +50,7 @@ def get_review(enrollment_id):
 
 @app_views.route('/enrollments/<enrollment_id>', methods=['DELETE'],
                  strict_slashes=False)
-def delete_review(enrollment_id):
+def delete_enrollment(enrollment_id):
     """
     Deletes a Review Object
     """
@@ -88,12 +98,12 @@ def post_enrollment(user_id):
     return make_response(jsonify(instance.to_dict()), 201)
 
 
-@app_views.route('/enrollments/<enrollment-id>', methods=['PUT'], strict_slashes=False)
-def put_review(enrollment_id):
+@app_views.route('/enrollment/<enrollment_id>', methods=['PUT'], strict_slashes=False)
+def put_enrollment(enrollment_id):
     """
     Updates a Enrollment
     """
-    review = storage.get(Enrollment, enrollment_id)
+    en = storage.get(Review, review_id)
 
     if not review:
         abort(404)
@@ -108,6 +118,10 @@ def put_review(enrollment_id):
         if key not in ignore:
             setattr(review, key, value)
     storage.save()
+<<<<<<< HEAD
     return make_response(jsonify(review.to_dict()), 200)
 
 
+=======
+    return make_response(jsonify(en.to_dict()), 200)
+>>>>>>> main

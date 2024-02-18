@@ -8,7 +8,7 @@ from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
 
-@app_views.route('/course/<course_id/lesson', methods=['GET'],
+@app_views.route('/course/<course_id>/lesson', methods=['GET'],
                  strict_slashes=False)
 def get_lessons(course_id):
     """
@@ -25,7 +25,7 @@ def get_lessons(course_id):
 
 
 @app_views.route('/lesson/<lesson_id>', methods=['GET'], strict_slashes=False)
-def get_review(lesson_id):
+def get_lesson(lesson_id):
     """
     Retrieves a Lesson object
     """
@@ -38,7 +38,7 @@ def get_review(lesson_id):
 
 @app_views.route('/lesson/<lesson_id>', methods=['DELETE'],
                  strict_slashes=False)
-def delete_review(lesson_id):
+def delete_lesson(lesson_id):
     """
     Deletes a lesson Object
     """
@@ -56,7 +56,7 @@ def delete_review(lesson_id):
 
 @app_views.route('/course/<course_id>/lesson', methods=['POST'],
                  strict_slashes=False)
-def post_review(course_id):
+def post_lesson(course_id):
     """
     Creates a Lesson
     """
