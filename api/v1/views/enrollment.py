@@ -12,11 +12,7 @@ from flasgger.utils import swag_from
 @app_views.route('/user/<user_id>/enrollments', methods=['GET'], strict_slashes=False)
 def get_user_enrollment(user_id):
     """
-<<<<<<< HEAD
     Retrieves the list of all Enrollments objects of a Course
-=======
-    Retrieves the list of all enrollments for a user
->>>>>>> main
     """
     user = storage.get(User, user_id)
 
@@ -118,10 +114,4 @@ def put_enrollment(enrollment_id):
         if key not in ignore:
             setattr(review, key, value)
     storage.save()
-<<<<<<< HEAD
-    return make_response(jsonify(review.to_dict()), 200)
-
-
-=======
     return make_response(jsonify(en.to_dict()), 200)
->>>>>>> main
