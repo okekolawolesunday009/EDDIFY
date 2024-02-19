@@ -30,6 +30,7 @@ def login():
     if form.validate_on_submit():
         from models.user import User
         user = models.storage.all(User)
+        user_profile = None
         for use in user.values():
             if use.email == form.email.data:
                 user_profile = use
