@@ -373,7 +373,6 @@ header .navigation_bar a {
 
 .user_txt p{
     font-size: 1rem;
-    padding-right: 150px;
 
 }
 
@@ -518,27 +517,27 @@ header .navigation_bar a {
 }
 
 .instruc_txt h4{
+    text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
     font-weight: bold;
 }
 
 .instruc_txt p{
-    width: 60%;
+    width: 100%;
     text-align: center;
     font-size: 1.3rem;
 }
 
 
 .intructor_bio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(570px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
     gap: 10px;
     width: 100%;
-    max-width: 1200px; /* Set a maximum width to ensure centering is noticeable */
     margin-left: auto;
     margin-right: auto;
 }
@@ -805,7 +804,6 @@ footer .logo_intro{
 
     .know_grid{
         grid-template-columns: none;
-        grid-template-rows: 1fr 1fr;
     }
 
     .know_img{
@@ -814,12 +812,8 @@ footer .logo_intro{
 
     .testimony_grid{
         grid-template-columns: none;
-        grid-template-rows: 1fr 1fr;
     }
 
-    .testimony1{
-        height: 500px;
-    }
 }
 
 
@@ -877,10 +871,23 @@ footer .logo_intro{
 
     .ins_bio_grid {
         display: flex;
-        width: 428px;
         margin-bottom: 120px;
         margin: 0 auto;
         margin-bottom: 40px;
+        flex-direction: column;
+    }
+
+    .instuctor_img{
+        width: 100%;
+    }
+
+    .bio_article{
+        width: 100%;
+        margin-left: 0;
+    }
+
+      .banner h1{
+        font-size: 2rem;
       }
 }
 
@@ -915,3 +922,87 @@ footer .logo_intro{
         flex-wrap: wrap;
       }
 }
+
+@media screen and (max-width: 594px){
+    .banner h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 568px){
+    .email_form h1{
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .email_form p{
+        font-size: 1rem;
+        padding: 0 40px 0;
+    }
+
+    .email {
+        padding-right: 50px;
+    }
+
+    .sub {
+        padding: 20px 20px 20px;
+      }
+
+    
+}
+
+@media screen and (max-width: 516px){
+    .email_form form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sub {
+        padding: 20px 20px 20px;
+    }
+
+    .first_grid h1{
+        padding-right: 0;
+    }
+
+    .email{
+        margin-bottom: 10px;
+        padding-right: 1px;
+    }
+}
+
+@media screen and (max-width: 511px){
+    .course {
+        margin-top: 265px;
+      }
+}
+
+@media screen and (max-width: 473px){
+    .course {
+        margin-top: 329px;
+    }
+
+    .nav_image img {
+        width: 150px;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+    .course {
+        margin-top: 400px;
+    }
+}
+
+@media screen and (max-width: 439px) {
+    .logo_intro p {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 403px) {
+    .course{
+        margin-top: 460px;
+    }
+} 

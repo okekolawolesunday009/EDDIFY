@@ -6,7 +6,6 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 import jwt
-from jwt import encode, decode
 from flask import Flask
 from functools import wraps
 from datetime import datetime, timedelta
