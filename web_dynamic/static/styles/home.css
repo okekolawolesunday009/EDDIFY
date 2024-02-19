@@ -1,0 +1,776 @@
+/* *{
+    font-family: poppins;
+} */
+
+.nav_image img{
+    width: 200px;
+}
+
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 40px 0 40px;
+}
+
+
+
+header .navigation_bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header .navigation_bar li {
+    padding: 0 50px; 
+}
+
+header .navigation_bar li a{
+    font-size: 1.2rem;
+}
+
+header .navigation_bar li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; 
+    background-color: #5A49E3;
+    transition: width 0.3s;
+}
+
+header .navigation_bar li:hover::after {
+    width: 100%;
+}
+
+header .navigation_bar a {
+    text-decoration: none;
+}
+
+.move_icon{
+    margin-left: 5px;
+}
+
+.cc{
+    display: flex;
+}
+
+
+.sign_up button{
+    border: none;
+    padding: 20px 40px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5A49E3;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.sign_up button:hover{
+    background-color: #3925cf;
+}
+
+
+
+.hero_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80vh;
+    margin: 20px 40px 0 40px;
+}
+
+.grid_photo1{
+    height: 700px;
+    width: 250px;
+    background-color: #3925cf;
+    border-radius: 50px;
+    background-image: url(../images/zaini-izzuddin-55btQzyDiO8-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.first_grid h1{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-right: 150px;
+}
+
+.first_grid > p{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.grid_photo2{
+    height: 700px;
+    width: 250px;
+    background-color: #3925cf;
+    border-radius: 50px;
+    margin-top: 110px;
+    background-image: url(../images/nishaan-ahmed-6w1S7xS6AnM-unsplash.jpg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.first_grid button{
+    margin-top: 20px;
+    border: none;
+    padding: 20px 40px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5A49E3;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.first_grid button:hover{
+    background-color: #3925cf;
+}
+
+.second_grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.tick{
+    display: flex;
+    align-items: center;
+}
+
+.tick i{
+    padding: 15px;
+    background-color: #5A49E3;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.tick p{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 1.3rem;
+}
+
+.course{
+    margin-top: 150px;
+    margin: 20px 40px 0 40px;
+}
+
+.course_hd_txt h1{
+    font-weight: bold;
+}
+
+.course_hd_txt > p{
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.course_hd_txt ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.course_hd_txt ul li{
+   margin: 0 20px;
+}
+
+.Course_video article{
+    width: 380px;
+    height: 490px;
+    margin-top: 70px;
+    background-color: rgb(228, 223, 223);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Course_video article > h1{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+
+.Course_video article > h1{
+    padding-left: 10px;
+}
+
+
+.Course_video article  > p{
+    padding-left: 10px;
+}
+
+.Course_video article > div{
+    padding-left: 10px;
+}
+
+.img_cover{
+    width: 380px;
+    height: 250px;
+    background-image: url(../images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.rating{
+    display: flex;
+    padding: 0;
+}
+
+.price{
+    padding: 0;
+    display: flex;
+
+}
+
+.slash_price{
+    padding-right: 30px;
+    text-decoration: line-through;
+    text-decoration-skip-ink: auto;
+}
+
+.rating > div{
+    margin-right: 20px;
+}
+
+.Course_video{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: center;
+    align-items: center;
+}
+
+.view{
+    border: 1px solid #5A49E3;
+    background-color: #fff;
+    padding: 20px 100px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: #5A49E3;
+    transition: background-color 0.3s;
+}
+
+.view:hover{
+    background-color: #5A49E3;
+    color: #fff;
+}
+
+.rating > div i{
+    color: gold;
+}
+
+.banner{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #5A49E3;
+    padding: 100px 0 100px;
+}
+
+.banner h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #fff;
+
+}
+
+.banner p{
+    color: #fff;
+}
+
+.banner_list{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.know{
+    margin: 20px 40px 100px 40px;
+}
+
+.know_grid1{
+    padding: 0;
+}
+
+.know_grid1 h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+.prof{
+    margin-top: 60px;
+}
+
+.know_grid1 h1{
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.know_grid1 > p{
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.prof_flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.prof_flex .fl{
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #5A49E3;
+    border-radius: 50%;
+    color: white;
+}
+
+
+
+.know_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.prof div i{
+    margin: 0;
+    padding: 0;
+}
+
+.user_txt h1, p{
+    padding: 0;
+    margin: 0;
+}
+
+.user_txt h1{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.user_txt p{
+    font-size: 1rem;
+    padding-right: 150px;
+
+}
+
+.know_img{
+    width: 500px;
+    height: 620px;
+    background-image: url(../images/zaini-izzuddin-55btQzyDiO8-unsplash.jpg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.know_grid2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Testimony{
+    margin: 250px 40px 100px 40px;
+}
+
+.testimony_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.testimony1 > h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5A49E3;
+}
+
+.testimony1 > p{
+    font-weight: 200;
+
+}
+
+.button{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    width: 17%;
+}
+
+.button i{
+    padding: 25px;
+    background-color: #5A49E3;
+    border-radius: 100%;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.button i:hover{
+    background-color: white;
+    color: #5A49E3;
+    border: 1px solid #5A49E3;
+}
+
+.Testimony
+
+.image_carosle{
+    display: flex;
+    position: relative;
+}
+
+.image_carosle img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-right: -25px;
+    position: relative;
+}
+
+.image_carosle i{
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    left: 112px;
+    top: 9px;
+}
+
+.testimony2{
+    display: flex;
+    position: relative;
+}
+
+.bio{
+    background-color: rgb(235, 235, 235);
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.author_pic{
+    width: 420px;
+    height: 500px;
+    background-image: url(../images/TImi.jpeg);
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: absolute;
+    left: 400px;
+    bottom: 0px; */
+    border-radius: 10px;
+}
+
+.bio > h1{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.bio > h3{
+    font-weight: 200;
+}
+
+.bio > p{
+    font-weight: 100;
+}
+
+
+.instructor{
+    
+    margin: 100px 40px 0 40px;
+}
+.instruc_txt{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.instruc_txt h1{
+    color: #5A49E3;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.instruc_txt h4{
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.instruc_txt p{
+    width: 60%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+.intructor_bio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(570px, 1fr));
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width to ensure centering is noticeable */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* .intructor_bio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 100px;
+} */
+
+.ins_bio_grid{
+    display: flex;
+    width: 600px;
+    margin-bottom: 120px;
+}
+
+.bio_article{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 20px;
+
+}
+
+.bio_article > h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bio_article > a{
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.bio_article >  a span{
+    margin-left: 10px;
+}
+.instuctor_img{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url(../images/TImi.jpeg);
+    width: 700px;
+    height: 500px;
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+
+.instuctor_img a{
+    color: #5A49E3;
+    z-index: 3;
+    padding-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.instuctor_img a i{
+    font-size: 2rem;
+}
+
+.instuctor_img:hover a{
+    opacity: 1;
+}
+
+
+
+
+
+.email_banner{
+    background-image: url(../images/element5-digital-OyCl7Y4y0Bk-unsplash.jpg);
+    background-position: center bottom; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 150px;
+}
+
+.email_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.email_form h1{
+    color: #5A49E3;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.email_form p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #5A49E3;
+}
+
+.email{
+    padding: 20px 350px 20px 10px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.sub{
+    padding: 20px 50px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #5A49E3;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.email_form form{
+    margin-top: 40px;
+}
+
+footer{
+    margin: 20px 40px 80px 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+footer .logo_intro{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.logo_intro p{
+    width: 400px;
+    font-size: 1rem;
+}
+
+.cont_info a i{
+    font-size: 2rem;
+    color: #5A49E3;
+    margin-right: 20px;
+}
+
+.img_src img{
+    width:170px;
+    margin-bottom: 10px;
+}
+
+.logo_intro > p{
+    margin-bottom: 15px;
+}
+
+.popular_courses h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.popular_courses p{
+    margin-bottom: 10px;
+}
+
+.contact h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contact p{
+    margin-bottom: 10px;
+}
+.user_profile{
+    position: absolute;
+    right: 25px;
+    top: 123px;
+}
+
+.profile_list{
+    background-color: #cfcfcf;
+    padding: 50px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    border-radius: 10px;
+    display: none;
+}
+
+.pro_click{
+    cursor: pointer;
+    /* transition: display 0.3s ease; */
+}
+
+.avatar_pro{
+    background-color: #c70a0a;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+.close{
+    margin-left: 180px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5A49E3;
+}
+.profile_list li{
+    list-style: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.profile_list li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.profile_list li a i{
+    font-size: 1.5rem;
+    padding-right: 20px;
+    list-style: none;
+    color: #5A49E3;
+}
+
+.profile_list li a h2{
+    font-size: 1.5rem;
+    color: #5A49E3;
+}
