@@ -46,12 +46,15 @@ def login():
 
 
 
-@users.route("/", methods=['GET', 'POST'])
-@users.route("/home", methods=['GET', 'POST'])  
+@users.route("/", methods=['GET', 'POST'], strict_slashes=False)
+@users.route("/home", methods=['GET', 'POST'], strict_slashes=False)  
 def home():
     return render_template('home.html')   
 
 
+@users.route("/account", methods=['GET', 'POST'], strict_slashes=False) 
+def account():
+    return render_template('account.html')
 @users.route("/logout", strict_slashes=False)
 def logout():
     logout_user()
