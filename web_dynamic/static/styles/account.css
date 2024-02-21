@@ -47,7 +47,7 @@
 .account_list ul li a{
     display: flex;
     text-decoration: none;
-    margin-left: 90px;
+    /* margin-left: 90px; */
 }
 
 .account_list ul li a i{
