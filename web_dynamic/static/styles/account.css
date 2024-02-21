@@ -1,0 +1,75 @@
+.account-grid{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.side_bar_nav{
+    background-color: #5A49E3;
+    height: 100vh;
+    background-color: #5A49E3;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 200px;
+    margin-top: 70px;
+}
+
+.account{
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.account > h1{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.account_list ul{
+    padding: 0;
+    margin: 0;
+}
+.account_list ul li{
+    list-style: none;
+
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    transition: background-color 0.3s ease-out;
+}
+
+.account_list ul li a{
+    display: flex;
+    text-decoration: none;
+    /* margin-left: 90px; */
+}
+
+.account_list ul li a i{
+    font-size: 1.5rem;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.account_list ul li a h1{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.account_list ul li:hover{
+    background-color: #fff;
+}
+
+.account_list ul li:hover i{
+    color: #5A49E3;
+}
+
+.account_list ul li:hover h1{
+    color: #5A49E3;
+}
