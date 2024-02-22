@@ -1,6 +1,6 @@
-/* *{
-    font-family: poppins;
-} */
+*{
+    font-family: "Poppins", sans-serif;
+}
 
 .nav_image img{
     width: 200px;
@@ -80,7 +80,7 @@ header .navigation_bar a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 80vh;
-    margin: 20px 40px 0 40px;
+    margin: 20px 40px 150px 40px;
 }
 
 .grid_photo1{
@@ -179,10 +179,12 @@ header .navigation_bar a {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .course_hd_txt ul li{
    margin: 0 20px;
+   
 }
 
 .Course_video article{
@@ -251,6 +253,7 @@ header .navigation_bar a {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     justify-content: center;
     align-items: center;
+
 }
 
 .view{
@@ -370,7 +373,6 @@ header .navigation_bar a {
 
 .user_txt p{
     font-size: 1rem;
-    padding-right: 150px;
 
 }
 
@@ -430,7 +432,7 @@ header .navigation_bar a {
     border: 1px solid #5A49E3;
 }
 
-.Testimony
+
 
 .image_carosle{
     display: flex;
@@ -456,19 +458,21 @@ header .navigation_bar a {
 
 .testimony2{
     display: flex;
-    position: relative;
+    
 }
 
 .bio{
+    display: flex;
     background-color: rgb(235, 235, 235);
     padding: 50px;
-    width: 50%;
+    width: 100%;
     margin-top: 50px;
 }
 
+
+
 .author_pic{
-    width: 420px;
-    height: 500px;
+    padding: 200px;
     background-image: url(../images/TImi.jpeg);
     background-position: center center; 
     background-size: cover;
@@ -513,27 +517,27 @@ header .navigation_bar a {
 }
 
 .instruc_txt h4{
+    text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
     font-weight: bold;
 }
 
 .instruc_txt p{
-    width: 60%;
+    width: 100%;
     text-align: center;
     font-size: 1.3rem;
 }
 
 
 .intructor_bio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(570px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
     gap: 10px;
     width: 100%;
-    max-width: 1200px; /* Set a maximum width to ensure centering is noticeable */
     margin-left: auto;
     margin-right: auto;
 }
@@ -643,6 +647,7 @@ header .navigation_bar a {
     font-size: 1.2rem;
     font-weight: 300;
     color: #5A49E3;
+    text-align: center;
 }
 
 .email{
@@ -670,6 +675,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    gap: 30px;
     
 }
 
@@ -723,12 +729,18 @@ footer .logo_intro{
 }
 
 .profile_list{
-    background-color: #cfcfcf;
+    backdrop-filter: blur(150px);
     padding: 50px;
     padding-top: 30px;
     padding-bottom: 70px;
     border-radius: 10px;
     display: none;
+
+}
+
+.close{
+    cursor: pointer;
+    transition: display 0.3 ease;
 }
 
 .pro_click{
@@ -774,3 +786,223 @@ footer .logo_intro{
     font-size: 1.5rem;
     color: #5A49E3;
 }
+
+
+@media screen and (max-width: 1115px) {
+    header .navigation_bar li {
+        padding: 0 29px;
+    }
+
+    .hero_section{
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+    }
+
+    .second_grid{
+        display: none;
+    }
+
+    .know_grid{
+        grid-template-columns: none;
+    }
+
+    .know_img{
+        width: 100%;
+    }
+
+    .testimony_grid{
+        grid-template-columns: none;
+    }
+
+}
+
+
+@media screen and (max-width: 966px) {
+    header .navigation_bar li{
+        display: none;
+    }
+
+    .Course_video article{
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .email{
+        padding: 20px 250px 20px 10px;
+    }
+
+    .course_hd_txt ul {
+        
+        margin-top: 10px;
+      }
+}
+
+@media screen and (max-width: 901px){
+    .bio{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    footer{
+        flex-direction: column;
+    }
+
+    .email_form h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .course{
+        margin-top: 100px;
+    }
+
+    .email{
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 648px){
+    .sub{
+        padding: 20px 35px 20px;
+    }
+
+    .ins_bio_grid {
+        display: flex;
+        margin-bottom: 120px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        flex-direction: column;
+    }
+
+    .instuctor_img{
+        width: 100%;
+    }
+
+    .bio_article{
+        width: 100%;
+        margin-left: 0;
+    }
+
+      .banner h1{
+        font-size: 2rem;
+      }
+}
+
+@media screen and (max-width: 631px){
+    .email{
+        padding-right: 80px;
+    }
+
+    .course_hd_txt ul{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 629px){
+    .author_pic{
+        padding: 108px 39px 260px 20px;
+    }
+}
+
+@media screen and (max-width: 594px) {
+    .course{
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 526px){
+    .course{
+        margin-top: 200px;
+    }
+
+    .course_hd_txt ul {
+        flex-wrap: wrap;
+      }
+}
+
+@media screen and (max-width: 594px){
+    .banner h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 568px){
+    .email_form h1{
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .email_form p{
+        font-size: 1rem;
+        padding: 0 40px 0;
+    }
+
+    .email {
+        padding-right: 50px;
+    }
+
+    .sub {
+        padding: 20px 20px 20px;
+      }
+
+    
+}
+
+@media screen and (max-width: 516px){
+    .email_form form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sub {
+        padding: 20px 20px 20px;
+    }
+
+    .first_grid h1{
+        padding-right: 0;
+    }
+
+    .email{
+        margin-bottom: 10px;
+        padding-right: 1px;
+    }
+}
+
+@media screen and (max-width: 511px){
+    .course {
+        margin-top: 265px;
+      }
+}
+
+@media screen and (max-width: 473px){
+    .course {
+        margin-top: 329px;
+    }
+
+    .nav_image img {
+        width: 150px;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+    .course {
+        margin-top: 400px;
+    }
+}
+
+@media screen and (max-width: 439px) {
+    .logo_intro p {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 403px) {
+    .course{
+        margin-top: 460px;
+    }
+} 
