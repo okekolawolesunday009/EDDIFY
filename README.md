@@ -11,7 +11,7 @@ Welcome to EDDIFY, where learning knows no bounds! As your premier e-learning pl
 
 ## Table of Contents
 
-- [Introduction](# EDDIFY - A E-Learining Platform For Students)
+- [Introduction](#)
 - [Key Features](#key-features)
 - [Testing](#testing)
 - [Technologies Used](#technologies-used)
