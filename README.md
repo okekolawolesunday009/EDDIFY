@@ -35,9 +35,9 @@ Explore EDDIFY now: [EDDIFY Platform](https://eddify-frontend.onrender.com/)
 
 ## Final Project Blog Article
 
-Read about the journey of building EDDIFY: [EDDIFY Project Blog](#) <!-- Replace with your actual blog article link -->
+Read about the journey of building EDDIFY: [EDDIFY Project Blog](https://medium.com/@kasshymoni0812/announcing-eddify1-0-f22a8a8d7c0a) 
 
 ## Authors
 
-- [Author Name](Adeniran Timilehin) - [LinkedIn](https://www.linkedin.com/in/timilehin-adeniran-342710234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 
-- [Author Name](Oke Kolawole) - [LinkedIn](#)
+- [Adeniran Timilehin](#) - [LinkedIn](https://www.linkedin.com/in/timilehin-adeniran-342710234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 
+- [Oke Kolawole](#) - [LinkedIn](https://www.linkedin.com/in/kolawole-sunday-oke-38b1871a3/)
