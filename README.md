@@ -6,17 +6,68 @@
 
 Welcome to EDDIFY, where learning knows no bounds! As your premier e-learning platform, EDDIFY is crafted to unleash your intellectual potential and guide you on a journey of continuous education. Whether you're a seasoned professional, a student eager to explore new horizons, or someone embarking on a lifelong learning adventure, EDDIFY is your trusted companion.
 
-## EDDIFY API LINK
-Explore the EDDIFY API for various functionalities:
+# EDDIFY API LINKS - Courses and Categories
 
-- [GET All Users](http://0.0.0.0:5000/api/v1/users) - Retrieves the list of all user objects or a specific user.
-- [GET User by ID](http://0.0.0.0:5000/api/v1/users/{user_id}) - Retrieves details of a specific user by user ID.
-- [DELETE User by ID](http://0.0.0.0:5000/api/v1/users/{user_id}) - Deletes a user object by user ID.
-- [User Signup API](http://0.0.0.0:5000/api/v1/signup/) - Creates a new user.
-- [User Login API](http://0.0.0.0:5000/api/v1/login/) - Logs in a user.
-- [Authenticate User](http://0.0.0.0:5000/api/v1/auth/) - Authenticates a user based on the provided token.
-- [PUT User by ID](http://0.0.0.0:5000/api/v1/users/{user_id}) - Updates user information by user ID.
-## Table of Contents
+Explore the EDDIFY API for various functionalities related to courses and categories:
+
+1. **Get All Categories**
+    - **Endpoint:** `/category`
+    - **Method:** `GET`
+    - **Description:** Retrieve information about all course categories.
+    - **Usage:** View a list of all available course categories.
+    - **Link:** [Get All Categories API](#)
+
+2. **Get Courses by Category**
+    - **Endpoint:** `/category/<category_id>/courses`
+    - **Method:** `GET`
+    - **Description:** Retrieve a list of courses under a specific category.
+    - **Usage:** View courses associated with a particular category.
+    - **Link:** [Get Courses by Category API](#)
+
+3. **Get Course by ID**
+    - **Endpoint:** `/courses/<course_id>/`
+    - **Method:** `GET`
+    - **Description:** Retrieve details about a specific course by its ID.
+    - **Usage:** Get information on a particular course.
+    - **Link:** [Get Course by ID API](#)
+
+4. **Get All Courses**
+    - **Endpoint:** `/courses`
+    - **Method:** `GET`
+    - **Description:** Retrieve information about all available courses.
+    - **Usage:** View a list of all courses on EDDIFY.
+    - **Link:** [Get All Courses API](#)
+
+5. **Get Enrolled Courses for a User**
+    - **Endpoint:** `/profile/courses/<user_id>/enrolled-courses`
+    - **Method:** `GET`
+    - **Description:** Retrieve courses that a user is enrolled in.
+    - **Usage:** View the courses in which a user is currently enrolled.
+    - **Link:** [Get Enrolled Courses API](#)
+
+6. **Delete Course by ID**
+    - **Endpoint:** `/courses/<course_id>/`
+    - **Method:** `DELETE`
+    - **Description:** Delete a course based on its ID.
+    - **Usage:** Remove a course from EDDIFY.
+    - **Link:** [Delete Course by ID API](#)
+
+7. **Create Course in a Category**
+    - **Endpoint:** `/category/<category_id>/courses`
+    - **Method:** `POST`
+    - **Description:** Create a new course under a specific category.
+    - **Usage:** Add a new course to a designated category.
+    - **Link:** [Create Course in a Category API](#)
+
+8. **Update Course by ID**
+    - **Endpoint:** `/courses/<course_id>/`
+    - **Method:** `PUT`
+    - **Description:** Update details of a specific course.
+    - **Usage:** Modify information about a particular course.
+    - **Link:** [Update Course by ID API](#)
+
+Feel free to explore and interact with these APIs to enhance your learning experience on EDDIFY.
+
 
 - [Introduction](#)
 - [Key Features](#key-features)
