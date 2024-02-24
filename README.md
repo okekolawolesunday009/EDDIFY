@@ -68,6 +68,161 @@ Explore the EDDIFY API for various functionalities related to courses and catego
 
 Feel free to explore and interact with these APIs to enhance your learning experience on EDDIFY.
 
+# EDDIFY API LINKS - User Management
+
+Explore the EDDIFY API for various user-related functionalities:
+
+1. **Get All Users**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/users](http://0.0.0.0:5000/api/v1/users)
+    - **Method:** `GET`
+    - **Description:** Retrieve the list of all user objects or a specific user.
+    - **Link:** [Get All Users API](http://0.0.0.0:5000/api/v1/users)
+
+2. **Get User by ID**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/users/<user_id>](http://0.0.0.0:5000/api/v1/users/<user_id>)
+    - **Method:** `GET`
+    - **Description:** Retrieve details of a specific user.
+    - **Link:** [Get User by ID API](http://0.0.0.0:5000/api/v1/users/<user_id>)
+
+3. **Delete User**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/users/<user_id>](http://0.0.0.0:5000/api/v1/users/<user_id>)
+    - **Method:** `DELETE`
+    - **Description:** Delete a user object.
+    - **Link:** [Delete User API](http://0.0.0.0:5000/api/v1/users/<user_id>)
+
+4. **User Signup**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/signup](http://0.0.0.0:5000/api/v1/signup)
+    - **Method:** `POST`
+    - **Description:** Create a new user account.
+    - **Link:** [User Signup API](http://0.0.0.0:5000/api/v1/signup)
+
+5. **User Login**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/login](http://0.0.0.0:5000/api/v1/login)
+    - **Method:** `POST`
+    - **Description:** Authenticate and log in a user.
+    - **Link:** [User Login API](http://0.0.0.0:5000/api/v1/login)
+
+6. **User Authentication**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/auth](http://0.0.0.0:5000/api/v1/auth)
+    - **Method:** `GET`
+    - **Description:** Authenticate and retrieve user details.
+    - **Link:** [User Authentication API](http://0.0.0.0:5000/api/v1/auth)
+
+7. **Update User**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/users/<user_id>](http://0.0.0.0:5000/api/v1/users/<user_id>)
+    - **Method:** `PUT`
+    - **Description:** Update user information.
+    - **Link:** [Update User API](http://0.0.0.0:5000/api/v1/users/<user_id>)
+
+Feel free to explore these APIs to manage your user accounts on EDDIFY.
+
+# EDDIFY API LINKS - User Enrollments
+
+Explore the EDDIFY API for managing user enrollments:
+
+1. **Get User Enrollments**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/user/<user_id>/enrollments](http://0.0.0.0:5000/api/v1/user/<user_id>/enrollments)
+    - **Method:** `GET`
+    - **Description:** Retrieve the list of all enrollments of a user, along with details of the enrolled courses.
+    - **Link:** [Get User Enrollments API](http://0.0.0.0:5000/api/v1/user/<user_id>/enrollments)
+
+2. **Get Enrollment by ID**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>](http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>)
+    - **Method:** `GET`
+    - **Description:** Retrieve details of a specific enrollment.
+    - **Link:** [Get Enrollment by ID API](http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>)
+
+3. **Delete Enrollment**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>](http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>)
+    - **Method:** `DELETE`
+    - **Description:** Delete an enrollment object.
+    - **Link:** [Delete Enrollment API](http://0.0.0.0:5000/api/v1/enrollments/<enrollment_id>)
+
+4. **Create Enrollment**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/course/<user_id>/enrollments](http://0.0.0.0:5000/api/v1/course/<user_id>/enrollments)
+    - **Method:** `POST`
+    - **Description:** Enroll a user in a course.
+    - **Link:** [Create Enrollment API](http://0.0.0.0:5000/api/v1/course/<user_id>/enrollments)
+
+5. **Update Enrollment**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/enrollment/<enrollment_id>](http://0.0.0.0:5000/api/v1/enrollment/<enrollment_id>)
+    - **Method:** `PUT`
+    - **Description:** Update enrollment information.
+    - **Link:** [Update Enrollment API](http://0.0.0.0:5000/api/v1/enrollment/<enrollment_id>)
+
+Feel free to use these APIs to manage user enrollments on EDDIFY.
+
+# EDDIFY API LINKS - Course Lessons
+
+Explore the EDDIFY API for managing course lessons:
+
+1. **Get Lessons of a Course**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/course/<course_id>/lesson](http://0.0.0.0:5000/api/v1/course/<course_id>/lesson)
+    - **Method:** `GET`
+    - **Description:** Retrieve the list of all lessons associated with a course.
+    - **Link:** [Get Lessons of a Course API](http://0.0.0.0:5000/api/v1/course/<course_id>/lesson)
+
+2. **Get Lesson by ID**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/lesson/<lesson_id>](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+    - **Method:** `GET`
+    - **Description:** Retrieve details of a specific lesson.
+    - **Link:** [Get Lesson by ID API](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+
+3. **Delete Lesson**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/lesson/<lesson_id>](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+    - **Method:** `DELETE`
+    - **Description:** Delete a lesson object.
+    - **Link:** [Delete Lesson API](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+
+4. **Create Lesson**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/course/<course_id>/lesson](http://0.0.0.0:5000/api/v1/course/<course_id>/lesson)
+    - **Method:** `POST`
+    - **Description:** Create a new lesson associated with a course.
+    - **Link:** [Create Lesson API](http://0.0.0.0:5000/api/v1/course/<course_id>/lesson)
+
+5. **Update Lesson**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/lesson/<lesson_id>](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+    - **Method:** `PUT`
+    - **Description:** Update lesson information.
+    - **Link:** [Update Lesson API](http://0.0.0.0:5000/api/v1/lesson/<lesson_id>)
+
+Feel free to use these APIs to manage lessons associated with courses on EDDIFY.
+
+# EDDIFY API LINKS - Course Reviews
+
+Explore the EDDIFY API for managing course reviews:
+
+1. **Get Reviews of a Course**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/course/<course_id>/reviews](http://0.0.0.0:5000/api/v1/course/<course_id>/reviews)
+    - **Method:** `GET`
+    - **Description:** Retrieve the list of all reviews associated with a course.
+    - **Link:** [Get Reviews of a Course API](http://0.0.0.0:5000/api/v1/course/<course_id>/reviews)
+
+2. **Get Review by ID**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/reviews/<review_id>](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+    - **Method:** `GET`
+    - **Description:** Retrieve details of a specific review.
+    - **Link:** [Get Review by ID API](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+
+3. **Delete Review**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/reviews/<review_id>](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+    - **Method:** `DELETE`
+    - **Description:** Delete a review object.
+    - **Link:** [Delete Review API](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+
+4. **Create Review**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/course/<course_id>/reviews](http://0.0.0.0:5000/api/v1/course/<course_id>/reviews)
+    - **Method:** `POST`
+    - **Description:** Create a new review associated with a course.
+    - **Link:** [Create Review API](http://0.0.0.0:5000/api/v1/course/<course_id>/reviews)
+
+5. **Update Review**
+    - **Endpoint:** [http://0.0.0.0:5000/api/v1/reviews/<review_id>](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+    - **Method:** `PUT`
+    - **Description:** Update review information.
+    - **Link:** [Update Review API](http://0.0.0.0:5000/api/v1/reviews/<review_id>)
+
+Feel free to use these APIs to manage reviews associated with courses on EDDIFY.
 
 - [Introduction](#)
 - [Key Features](#key-features)
