@@ -28,3 +28,16 @@ Welcome to EDDIFY, where learning knows no bounds! As your premier e-learning pl
 6. **Progress Tracking and Analytics:** Tools that allow learners to track their progress, receive performance analytics, and identify areas for improvement.
 7. **User-Friendly Interface:** Intuitive and user-friendly interface for easy navigation and a positive user experience.
 8. **Accessibility Features:** Inclusion of accessibility features to ensure that the platform is usable by individuals with diverse abilities.
+
+## Deployed Site
+
+Explore EDDIFY now: [EDDIFY Platform](https://eddify-frontend.onrender.com/) 
+
+## Final Project Blog Article
+
+Read about the journey of building EDDIFY: [EDDIFY Project Blog](#) <!-- Replace with your actual blog article link -->
+
+## Authors
+
+- [Author Name](Adeniran Timilehin) - [LinkedIn](https://www.linkedin.com/in/timilehin-adeniran-342710234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) 
+- [Author Name](Oke Kolawole) - [LinkedIn](#)
