@@ -15,6 +15,7 @@ class Lesson(BaseModel, Base):
     if models.storage_t == "db":
         __tablename__ = 'lessons'
         lesson_title = Column(String(128), nullable=False)
+        description = Column(String(258), nullable=False)
         content =  Column(String(250), nullable=False)
         course_id = Column(String(60), ForeignKey('courses.id'))
     else:

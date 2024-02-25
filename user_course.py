@@ -19,10 +19,10 @@ course_two.save()
 
 #---------------------------
 #creates a lesson ad n link it to a course which is attached to a category
-lesson_one = Lesson(lesson_title="HTML5 TAGS", content="https://www.youtube.com/watch?v=ZhULGD5hNQs", course_id=course_one.id)
+lesson_one = Lesson(lesson_title="HTML5 TAGS", description="Html is a mark up language", content="ZhULGD5hNQs", course_id=course_one.id)
 lesson_one.save()
 #---------------------------
-#creates a user
+#creates a useg
 user_one = User( first_name="victor", last_name="Osimehn", email="admin@gmail.com", password="12345678",phone_no="070000000", image_file="01")
 user_one.save()
 #---------------------------
