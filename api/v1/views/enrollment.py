@@ -66,7 +66,7 @@ def delete_enrollment(enrollment_id):
                  strict_slashes=False)
 def post_enrollment(user_id):
     """
-    Creates a Review
+    Creates a enrollemt
     """
     course = storage.get(Course, user_id)
 
