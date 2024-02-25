@@ -12,7 +12,7 @@ from flasgger.utils import swag_from
 @app_views.route('/user/<user_id>/enrollments', methods=['GET'], strict_slashes=False)
 def get_user_enrollment(user_id):
     """
-    Retrieves the list of all enrollments for a user
+    Retrieves the list of all Enrollments objects of a Course
     """
     user = storage.get(User, user_id)
 
@@ -35,7 +35,7 @@ def get_user_enrollment(user_id):
 @app_views.route('/enrollments/<enrollment_id>', methods=['GET'], strict_slashes=False)
 def get_enrollment(enrollment_id):
     """
-    Retrieves a Review object
+    Retrieves a enrollment object
     """
     enrollment = storage.get(Enrollment, enrollment_id)
     if not enrollment:
