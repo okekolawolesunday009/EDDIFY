@@ -28,10 +28,12 @@ class DBStorage:
         EDDIFY_MYSQL_HOST = getenv('EDDIFY_MYSQL_HOST')
         EDDIFY_MYSQL_DB = getenv("EDDIFY_MYSQL_DB")
         EDDIFY_ENV = getenv('EDDIFY_ENV')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
+	EDDIFY_MYSQL_PORT = getenv("EDDIFY_MYSQL_PORT")
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}:{}/{}'.
                                       format(EDDIFY_MYSQL_USER,
                                              EDDIFY_MYSQL_PWD,
                                              EDDIFY_MYSQL_HOST,
+					     EDDIFY_MYSQL_PORT,
                                              EDDIFY_MYSQL_DB))
 		
         if EDDIFY_ENV == "test":
