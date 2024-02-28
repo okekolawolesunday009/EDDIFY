@@ -9,6 +9,7 @@ import jwt
 from flask import Flask
 from functools import wraps
 from datetime import datetime, timedelta
+import bcrypt
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "8745E34566SDFF"
@@ -89,13 +90,30 @@ def post_user():
     if not request.get_json():
         abort(400, description="Not a JSON")
 
+    data = request.get_json()
     required_fields = ['first_name', 'last_name', 'email', 'password', 'phone_no', 'image_file']
-    missing_fields = [field for field in required_fields if field not in request.get_json()]
+    missing_fields = [field for field in required_fields if field not in data]
     if missing_fields:
         abort(400, description=f"Missing fields: {', '.join(missing_fields)}")
 
-    data = request.get_json()
-    instance = User(**data)
+    #Check if the email already exists
+    if storage.get_user(User, val=data['email']):
+        abort(409, description="User with this email already exists")
+
+    # Encode the password before hashing
+    password = data['password'].encode('utf-8')
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+
+    # Create a new user instance
+    instance = User(
+        first_name=data['first_name'],
+        last_name=data['last_name'],
+        email=data['email'],
+        password=hashed_password,
+        phone_no=data['phone_no'],
+        image_file=data['image_file']
+    )
+
     instance.save()
     
     token = jwt.encode({
@@ -128,27 +146,29 @@ def login_user():
     # Find the user by email
     user = storage.get_user(User, email)
 
-    if request.method == 'POST':
+    if not user:
+        abort(401, description="Invalid email")
 
-        if not user:
-            abort(401, description="Invalid email or password")
+    # Verify the password
+    # if not bcrypt.check_password_hash(user.password, password):
+    if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
+        print(user)
+    else:
+        abort(401, description="Invalid  password")
+    print(user.id)
 
-        # Verify the password
-        if not user.password:
-            abort(401, description="Invalid email or password")
-        print(user.id)
-        # Set the user_id cookie
-        response = make_response(jsonify({'user': user.to_dict()}), 200)
-        response.set_cookie('user', str(user.id))
+    # Set the user_id cookie
+    response = make_response(jsonify({'user': user.to_dict()}), 200)
+    response.set_cookie('user', str(user.id))
 
-        token = jwt.encode({
-            "user": user.id,
-            "expiration": str(datetime.utcnow() + timedelta(minutes=120))
-            },
-            app.config['SECRET_KEY'])
-        return jsonify({
-            "token" : token
-            }), 200
+    token = jwt.encode({
+        "user": user.id,
+        "expiration": str(datetime.utcnow() + timedelta(minutes=120))
+        },
+        app.config['SECRET_KEY'])
+    return jsonify({
+        "token" : token
+        }), 200
 
 
 
