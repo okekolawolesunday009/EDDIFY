@@ -154,13 +154,10 @@ def login_user():
     if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
         print(user)
     else:
-        abort(401, description="Invalid  password")
+        abort(401, description="password not match")
     print(user.id)
 
     # Set the user_id cookie
-    response = make_response(jsonify({'user': user.to_dict()}), 200)
-    response.set_cookie('user', str(user.id))
-
     token = jwt.encode({
         "user": user.id,
         "expiration": str(datetime.utcnow() + timedelta(minutes=120))
