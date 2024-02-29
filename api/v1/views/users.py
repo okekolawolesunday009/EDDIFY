@@ -101,15 +101,13 @@ def post_user():
         abort(409, description="User with this email already exists")
 
     # Encode the password before hashing
-    password = data['password'].encode('utf-8')
-    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
 
     # Create a new user instance
     instance = User(
         first_name=data['first_name'],
         last_name=data['last_name'],
         email=data['email'],
-        password=hashed_password,
+        password=data['password'],
         phone_no=data['phone_no'],
         image_file=data['image_file']
     )
@@ -149,12 +147,6 @@ def login_user():
     if not user:
         abort(401, description="Invalid email")
 
-    # Verify the password
-    # if not bcrypt.check_password_hash(user.password, password):
-    if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
-        print(user)
-    else:
-        abort(401, description="password not match")
     print(user.id)
 
     # Set the user_id cookie
