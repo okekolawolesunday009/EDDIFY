@@ -72,6 +72,7 @@ def post_enrollment(course_id):
 
     if not course:
         abort(404)
+    print(request.get_json)
 
     if not request.get_json():
         abort(400, description="Not a JSON")
@@ -81,15 +82,13 @@ def post_enrollment(course_id):
 
     data = request.get_json()
     user = storage.get(User, data['user_id'])
+    print(user)
 
     if not user:
         abort(404)
 
-    if 'text' not in request.get_json():
-        abort(400, description="Missing text")
 
-    user_id = data['user_id']
-    instance = Enrollment(user_id, course_id)
+    instance = Enrollment(course_id=course.id, user_id=user.id)
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
 
