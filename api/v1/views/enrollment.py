@@ -62,13 +62,13 @@ def delete_enrollment(enrollment_id):
     return make_response(jsonify({}), 200)
 
 
-@app_views.route('/course/<user_id>/enrollments', methods=['POST'],
+@app_views.route('/course/<course_id>/enrollments', methods=['POST'],
                  strict_slashes=False)
-def post_enrollment(user_id):
+def post_enrollment(course_id):
     """
     Creates a enrollemt
     """
-    course = storage.get(Course, user_id)
+    course = storage.get(Course, course_id)
 
     if not course:
         abort(404)
@@ -88,8 +88,8 @@ def post_enrollment(user_id):
     if 'text' not in request.get_json():
         abort(400, description="Missing text")
 
-    data['user_id'] = user_id
-    instance = Enrollment(**data)
+    user_id = data['user_id']
+    instance = Enrollment(user_id, course_id)
     instance.save()
     return make_response(jsonify(instance.to_dict()), 201)
 
